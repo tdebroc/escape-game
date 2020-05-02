@@ -1,6 +1,6 @@
 app.controller('HomeCtrl', ["$scope", "$timeout",
                             function($scope, $timeout) {
-  let answers = ["", "57 rue de la paix", "43", "81", "36;6;85;oui", "compiègne", "oui"];
+  let answers = ["", "57 rue de la paix", "43", "81", "36;6;85;oui", "compiègne", "175;200;275;6;100;100;oui"];
   let stepFromGet = findGetParameter("step");
   $scope.step = stepFromGet ? stepFromGet : 0;
   $scope.passengerCount = 0;
@@ -22,6 +22,10 @@ app.controller('HomeCtrl', ["$scope", "$timeout",
 
   $scope.answer4thStep = function(a, b, c, d) {
       $scope.answer(a + ";" + b + ";" + c + ";" + d, 4);
+  }
+
+  $scope.answer6thStep = function(a, b, c, d, e, f, g) {
+      $scope.answer(a + ";" + b + ";" + c + ";" + d + ";" + e + ";" + f + ";" + g, 6);
   }
 
   $scope.wrongAnswer = false;

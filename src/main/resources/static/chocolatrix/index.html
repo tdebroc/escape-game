@@ -155,29 +155,31 @@
     </md-card>
     <md-card  ng-if="step == 6">
         <h2>6ème énigme : Fabriquer l’antidote</h2>
-        Vous êtes arrivés au Laboratoire du professeur « Chocolatrix ». Celui-ci a préparé tous les ingrédients pour
-        préparer l’antidote mais il a oublié les proportions exactes des différents ingrédients ? A toi de les retrouver.<br/>
-        Beurre (g) : valeur en g de 4x² + 50 pour x = 5<br/>
-        Chocolat (g) : 40% de 500g<br/>
-        Sucre ( g) : la valeur en g de la médiane de cette série statistique : 345 ; 45 ; 110 ; 275 ; 92 ; 200 ; 125<br/>
-        Œufs : Si deux poules pondent 2 œufs en deux jours ; le nombre d’œufs nécessaires pour la recette est le
-        quart du nombre d’œufs pondus par 4 poules en 6 jours.<br/>
-        Farine (g) : la valeur de x en g en résolvant cette équation : 8x + 30 = 3x + 530<br/>
-        Noix (g) : la valeur de N en g N= 2² + 3² + 4² +5² +6² + 10<br/>
-        1. Préchauffez le four à : valeur en degré Celsius de la mesure d’un angle plat.<br/>
-        2. Beurrez un moule rectangulaire<br/>
-        3. Faire fondre le beurre avec le chocolat dans une casserole à feu doux. Enlevez du feu.<br/>
-        4. Ajoutez le sucre et mélangez<br/>
-        5. Ajouter les œufs un par un en battant après chaque ajout.<br/>
-        6. Rapidement ajoutez la farine et les noix hachées grossièrement<br/>
-        7. Versez la préparation dans un moule et faites cuire 1500 secondes<br/>
-        8. Laissez refroidir et coupez en carré. Servez froid<br/>
-        Faites gouter à votre famille ; S’ils apprécient vous avez réussi !<br/>
-        <md-select ng-model="answer6" placeholder="ont-ils apprécié ?" class="md-no-underline">
+        <p>
+            <img src="images/chocolate-cake.png" class="innerImage"/>Vous êtes arrivés au Laboratoire du professeur « Chocolatrix ». Celui-ci a préparé tous les ingrédients pour
+            préparer l’antidote mais il a oublié les proportions exactes des différents ingrédients ? A toi de les retrouver.<br/>
+            Beurre (g) : valeur en g de 4x² + 50 pour x = 5 <md-input-container class="small"><input ng-model="step6answer1" type="number" value="0"></md-input-container><br/>
+            Chocolat (g) : 40% de 500g  <md-input-container class="small"><input ng-model="step6answer2" type="number" value="0"></md-input-container><br/>
+            Sucre ( g) : la valeur en g de la médiane de cette série statistique : 345 ; 45 ; 110 ; 275 ; 92 ; 200 ; 125 :  <md-input-container class="small"><input ng-model="step6answer3" type="number" value="0"></md-input-container><br/>
+            Œufs : Si deux poules pondent 2 œufs en deux jours ; le nombre d’œufs nécessaires pour la recette est le
+            quart du nombre d’œufs pondus par 4 poules en 6 jours.  <md-input-container class="small"><input ng-model="step6answer4" type="number" value="0"></md-input-container><br/>
+            Farine (g) : la valeur de x en g en résolvant cette équation : 8x + 30 = 3x + 530  :<md-input-container class="small"><input ng-model="step6answer5" type="number" value="0"></md-input-container><br/>
+            Noix (g) : la valeur de N en g N= 2² + 3² + 4² +5² +6² + 10:  <md-input-container class="small"><input ng-model="step6answer6" type="number" value="0"></md-input-container><br/>
+            1. Préchauffez le four à : valeur en degré Celsius de la mesure d’un angle plat.<br/>
+            2. Beurrez un moule rectangulaire<br/>
+            3. Faire fondre le beurre avec le chocolat dans une casserole à feu doux. Enlevez du feu.<br/>
+            4. Ajoutez le sucre et mélangez<br/>
+            5. Ajouter les œufs un par un en battant après chaque ajout.<br/>
+            6. Rapidement ajoutez la farine et les noix hachées grossièrement<br/>
+            7. Versez la préparation dans un moule et faites cuire 1500 secondes<br/>
+            8. Laissez refroidir et coupez en carré. Servez froid<br/>
+            Faites gouter à votre famille ; S’ils apprécient vous avez réussi !<br/>
+        </p>
+        <md-select ng-model="step6answer7" placeholder="ont-ils apprécié ?" class="md-no-underline">
             <md-option value="OUI">OUI</md-option>
             <md-option value="NON">NON</md-option>
         </md-select>
-        <md-button  class="md-raised md-primary" ng-click="answer(answer6, 6)">Répondre</md-button>
+        <md-button  class="md-raised md-primary" ng-click="answer6thStep(step6answer1, step6answer2, step6answer3, step6answer4, step6answer5, step6answer6, step6answer7, 6)">Répondre</md-button>
     </md-card>
     <md-card ng-if="step == 7">
         BRAVO ! GRACE A VOUS NOUS ALLONS TRES VITE NOUS RETROUVER !

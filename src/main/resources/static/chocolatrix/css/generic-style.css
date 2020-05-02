@@ -10,6 +10,8 @@ md-card {
     margin-top: 5%;
     margin-left: 100px;
     margin-right: 100px;
+    max-height: 70%;
+    overflow: scroll;
     padding: 40px;
     background-color: rgba(255, 255, 255, 0.8);
 }
@@ -42,6 +44,9 @@ md-card {
 md-input-container.small {
     display: inline-block;
     width: 50px;
+    line-height: normal;
+    padding-bottom: 3px;
+    border: grey 1px solid;
 }
 
 md-input-container.small input {
@@ -57,8 +62,4 @@ md-select.small {
     float: left;
     margin-right: 10px;
     width: 40px;
-}
-
-.step4 md-input-container {
-    border: grey 1px solid;
 }
