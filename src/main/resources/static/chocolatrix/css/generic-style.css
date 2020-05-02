@@ -1,0 +1,54 @@
+body {
+    background-image: url("../images/background-chocolate-factory.jpg");
+    background-size:     cover;                      /* <------ */
+    background-repeat:   repeat;
+    background-attachment: 	scroll;
+    background-position: center center;
+}
+
+md-card {
+    margin-top: 5%;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#main-title {
+    margin-top: 0px;
+    text-align: center;
+    color: white;
+}
+
+#step0 {
+    vertical-align: center;
+}
+
+.wrongAnswer {
+    position: fixed;
+    top: 0px;
+}
+
+.innerImage {
+    float: left;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.innerText {
+    padding: 5px;
+}
+
+md-input-container.small {
+    display: inline-block;
+    width: 50px;
+}
+
+md-input-container.small input {
+    width: 50px;
+}
+
+md-select.small {
+    display: inline-block;
+    width: 50px;
+}

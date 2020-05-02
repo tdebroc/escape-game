@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+    <title>This is the title of the webpage!</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <!-- Libraries -->
+    <link rel="stylesheet" href="css/angular-material.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- Generic Platform -->
+    <link rel="stylesheet" href="css/generic-style.css"/>
+    <!-- Modules -->
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular/dirTerminalType.js"></script>
+    <script src="js/angular/angular-animate.min.js"></script>
+    <script src="js/angular/angular-aria.min.js"></script>
+    <script src="js/angular/angular-sanitize.js"></script>
+    <script src="js/angular/angular-material.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/homeController.js"></script>
+</head>
+<body ng-app="myApp"  ng-controller="HomeCtrl" >
+    <md-toolbar class="md-warn wrongAnswer" ng-if="wrongAnswer">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Mauvaise Réponse - ré-essayez !</h2>
+        </div>
+    </md-toolbar>
+    <h1 id="main-title"> A la recherche de l’antidote </h1>
+    <md-card id="step0"  ng-if="step == 0" >
+        <p  dir-terminal-type="" duration="10000" on-completion="acceptMissionButton()">
+            Un méchant virus a envahi la France. Toute la population est confinée et attend d’être délivrée.
+            Heureusement nous pouvons compter sur les élèves de la classe de 5ème du collège des Vignes qui ont
+            décidé de partir à la recherche de l’antidote qui permettra de sauver la population.<br/><br/><br/>
+            Mais elles devront faire preuve d’ingéniosité pour résoudre les différentes énigmes qui les mèneront au
+            Laboratoire du professeur Chocolatrix, savant renommé, qui travaille sur une potion magique dans son
+            laboratoire perdu au milieu de la forêt.<br/><br/>
+            Acceptez vous la mission ?<br/><br/>
+        </p>
+        <md-button  class="md-raised md-primary" ng-click="changeStep(1)" ng-if="showMissionAcceptedButton">
+            Oui J'accepte la mission !
+        </md-button>
+    </md-card>
+    <md-card ng-if="step == 1">
+        <h2>1 ère énigme : Trouver le bus chargé de vous emmener.</h2>
+        <form ng-submit="answer(busAdress, 1)">
+            <img src="images/bus-ecole.jpg" class="innerImage" style="width: 300px;"/>
+            Un bus vous attend à Courbevoie : Mais pour trouver le lieu tu dois d’abord ranger ces points sur une
+            demi-droite graduée : Y= 9/24 ;&nbsp;&nbsp;&nbsp; N= 1/2 ;&nbsp;&nbsp;&nbsp; Q= 3/12 ;&nbsp;&nbsp;&nbsp; F= 8/64 <br/>
+            Tu trouveras le nom de la rue où le bus t’attend mais attention mon avocat surveille ton travail !!
+            Le bus est garé en face d’une maison dont le numéro a été effacé. Pour trouver le numéro de la rue
+            résoudre ce calcul : A= (+30) +( +14) – ( (-5) - (+45 ) ) + ( -7) + (-50) + ( +20)
+            Le bus est garé au :
+            <md-input-container>
+                <label>Adresse du Bus</label>
+                <input ng-model="busAdress" type="text">
+            </md-input-container>
+            <md-button  class="md-raised md-primary">Voilà l'adresse</md-button>
+        </form>
+    </md-card>
+    <md-card  ng-if="step == 2">
+        <h2>2 ème énigme : S’assurer que tout le monde est présent.</h2>
+        <form ng-submit="answer(passengerCount, 2)">
+            <img src="images/insidebus.jpg" class="innerImage" style="width: 300px;"/>
+            Le bus contient 45 places mais le chauffeur a du mal à compter le nombre de passagers. Aide le pour savoir
+            s’il y aura de la place pour tout le monde.<br/><br/>
+            Le nombre de passagers est égal à quatre tiers des trois demis de un dixième de 215.<br/><br/>
+            Le nombre de passagers est :
+            <md-input-container style="width: 50px;">
+                <label></label>
+                <input ng-model="passengerCount" type="number" value="0">
+            </md-input-container>
+            <md-button  class="md-raised md-primary" type="submit">Voilà le nombre de passager</md-button>
+        </form>
+    </md-card>
+    <md-card ng-if="step == 3" class="step3">
+        <h2>3ème énigme : trouver la distance à parcourir</h2>
+        <form ng-submit="answer(kmLabo, 3)">
+            <img src="images/velo-fille.png" class="innerImage"/>
+            <span class="innerText">
+            Le chauffeur ne sait pas où il doit aller. Tu dois tout d’abord lui indiquer la distance à parcourir ; pour cela
+            tu dois résoudre cette énigme. Cette distance correspond au nombre de km parcourus par Julie en vélo la
+            première semaine :<br/><br/>Enigme : Julie s’entraine pour devenir championne cycliste. Elle parcourt un certain
+            nombre de km la première semaine et ensuite chaque semaine suivante, elle parcourt
+            23 kilomètres de plus que la semaine précédente. A la fin de la sixième semaine, elle a
+            parcouru en tout 831 km. Combien de km a-t-elle parcouru la première semaine ?</span>
+            <span>Le laboratoire est situé à</span>
+            <md-input-container class="small"><input ng-model="kmLabo" type="number" value="0"></md-input-container>
+            <span>km de Courbevoie.</span>
+            <md-button  class="md-raised md-primary" type="submit">
+                Voilà le nombre de km
+            </md-button>
+        </form>
+    </md-card>
+    <md-card  ng-if="step == 4">
+        <h2>4ème énigme : Vérifier le niveau d’essence</h2>
+        <form ng-submit="answer4thStep(step4answer1, step4answer2, step4answer3, step4answer4)">
+            <img src="images/fuel.gif" class="innerImage" style="width: 300px;"/>
+            Rappel: La destination est à 81km.<br/>
+            Le chauffeur avant de partir de Courbevoie s’aperçoit qu’il n’a presque plus d’essence ; malheureusement
+            toutes les stations sont fermées. <br/>
+            Le réservoir du bus a une très faible capacité et il est actuellement plein au 1/6.
+            <br/>
+            S’il pouvait rajouter 21L, alors son réservoir serait plein au 3/4 . Quelle est la capacité du réservoir ?
+            <md-input-container class="small"><input ng-model="step4answer1" type="number" value="0"></md-input-container>
+            <br/>
+            Quelle quantité d’essence lui reste t’il ? <md-input-container class="small"><input ng-model="step4answer2" type="number" value="0"></md-input-container>
+            <br/>
+            Sachant qu’il consomme 7L d’essence au 100 km, Combien de km peut-il encore parcourir ? (Arrondissez au km inférieur) <md-input-container class="small"><input ng-model="step4answer3" type="number" value="0"></md-input-container>
+            <p>
+                <span>Pourra t’il atteindre le lieu du Laboratoire ? Rentrez "OUI" ou "NON"</span>
+                <md-select class="small" ng-model="step4answer4" placeholder="OUI/NON" class="md-no-underline">
+                    <md-option value="OUI">OUI</md-option>
+                    <md-option value="NON">NON</md-option>
+                </md-select>
+            </p>
+            <md-button  class="md-raised md-primary" type="submit">
+                Voilà les réponses
+            </md-button>
+
+        </form>
+    </md-card>
+    <md-card  ng-if="step == 5">
+        <h2>5 ème énigme : Trouver le lieu</h2>
+        <form ng-submit="answer(ville, 5)">
+            <img src="images/mapLabo.png" style="width : 600px" class="innerImage"/>
+            <span>
+                Sur cette carte des environs de Paris, la distance entre Courbevoie et Versailles qui est de 18 km à vol
+                d’oiseau est représentée par 1 cm sur la carte. Quelle est l’échelle de cette carte ? Indique sur la carte
+                l’ensemble des lieux possibles du Laboratoire.<br/>
+                Le chauffeur ne sait toujours pas quelle route emprunter mais une des élèves se rappelle que le
+                Laboratoire est situé en pleine forêt et que pour s’y rendre le bus doit emprunter l’autoroute qui a comme
+                numéro le nombre qui est diviseur de tous les nombres.<br/>
+                Indique la grande ville la plus proche du Laboratoire :<br/>
+                <md-input-container>
+                    <label>Grande ville la plus proche</label>
+                    <input ng-model="ville" type="text">
+                </md-input-container>
+                <md-button  type="submit" class="md-raised md-primary">Voilà la ville</md-button>
+            </span>
+        </form>
+    </md-card>
+    <md-card  ng-if="step == 6">
+        <h2>6ème énigme : Fabriquer l’antidote</h2>
+        Vous êtes arrivés au Laboratoire du professeur « Chocolatrix ». Celui-ci a préparé tous les ingrédients pour
+        préparer l’antidote mais il a oublié les proportions exactes des différents ingrédients ? A toi de les retrouver.<br/>
+        Beurre (g) : valeur en g de 4x2 + 50 pour x = 5<br/>
+        Chocolat (g) : 40% de 500g<br/>
+        Sucre ( g) : la valeur en g de la médiane de cette série statistique : 345 ; 45 ; 110 ; 275 ; 92 ; 200 ; 125<br/>
+        Œufs : Si deux poules pondent 2 œufs en deux jours ; le nombre d’œufs nécessaires pour la recette est le
+        quart du nombre d’œufs pondus par 4 poules en 6 jours.<br/>
+        Farine (g) : la valeur de x en g en résolvant cette équation : 8x + 30 = 3x + 530<br/>
+        Noix (g) : la valeur de N en g N= 2² + 3² + 4² +5² +6² + 10<br/>
+        1. Préchauffez le four à : valeur en degré Celsius de la mesure d’un angle plat.<br/>
+        2. Beurrez un moule rectangulaire<br/>
+        3. Faire fondre le beurre avec le chocolat dans une casserole à feu doux. Enlevez du feu.<br/>
+        4. Ajoutez le sucre et mélangez<br/>
+        5. Ajouter les œufs un par un en battant après chaque ajout.<br/>
+        6. Rapidement ajoutez la farine et les noix hachées grossièrement<br/>
+        7. Versez la préparation dans un moule et faites cuire 1500 secondes<br/>
+        8. Laissez refroidir et coupez en carré. Servez froid<br/>
+        Faites gouter à votre famille ; S’ils apprécient vous avez réussi !<br/>
+        <md-select ng-model="answer6" placeholder="ont-ils apprécié ?" class="md-no-underline">
+            <md-option value="OUI">OUI</md-option>
+            <md-option value="NON">NON</md-option>
+        </md-select>
+        <md-button  class="md-raised md-primary" ng-click="answer(answer6, 6)">Répondre</md-button>
+    </md-card>
+    <md-card ng-if="step == 7">
+        BRAVO ! GRACE A VOUS NOUS ALLONS TRES VITE NOUS RETROUVER !
+    </md-card>
+
+
+
+
+
+</body>
+</html>
