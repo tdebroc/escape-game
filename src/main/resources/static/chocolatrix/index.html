@@ -105,7 +105,7 @@
             </md-button>
         </form>
     </md-card>
-    <md-card  ng-if="step == 4">
+    <md-card  ng-if="step == 4" class="step4">
         <h2>4ème énigme : Vérifier le niveau d’essence</h2>
         <form ng-submit="answer4thStep(step4answer1, step4answer2, step4answer3, step4answer4)">
             <img src="images/fuel.png" class="innerImage" style="width: 300px;"/>
@@ -122,7 +122,7 @@
             Sachant qu’il consomme 7L d’essence au 100 km, Combien de km peut-il encore parcourir ? (Arrondissez au km inférieur) <md-input-container class="small"><input ng-model="step4answer3" type="number" value="0"></md-input-container>
             <p>
                 <span>Pourra t’il atteindre le lieu du Laboratoire ? Rentrez "OUI" ou "NON"</span>
-                <md-select class="small" ng-model="step4answer4" placeholder="OUI/NON" class="md-no-underline">
+                <md-select class="small" ng-model="step4answer4" placeholder="" class="md-no-underline">
                     <md-option value="OUI">OUI</md-option>
                     <md-option value="NON">NON</md-option>
                 </md-select>

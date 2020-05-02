@@ -58,3 +58,7 @@ md-select.small {
     margin-right: 10px;
     width: 40px;
 }
+
+.step4 md-input-container {
+    border: grey 1px solid;
+}
