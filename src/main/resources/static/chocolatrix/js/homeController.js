@@ -1,7 +1,8 @@
 app.controller('HomeCtrl', ["$scope", "$timeout",
                             function($scope, $timeout) {
-  let answers = ["", "57 rue de la paix", "43", "81", "36;6;85;oui", "compiègne", "oui"]
-  $scope.step = 0;
+  let answers = ["", "57 rue de la paix", "43", "81", "36;6;85;oui", "compiègne", "oui"];
+  let stepFromGet = findGetParameter("step");
+  $scope.step = stepFromGet ? stepFromGet : 0;
   $scope.passengerCount = 0;
   $scope.showMissionAcceptedButton = true;
   $scope.acceptMissionButton = function() {
@@ -32,3 +33,18 @@ app.controller('HomeCtrl', ["$scope", "$timeout",
   }
 
 }]);
+
+
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
