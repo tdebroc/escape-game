@@ -52,10 +52,23 @@
             résoudre ce calcul : A= (+30) +( +14) – ( (-5) - (+45 ) ) + ( -7) + (-50) + ( +20)
             Le bus est garé au :
             <md-input-container>
-                <label>Adresse du Bus</label>
+                <label>XX rue de la XXXX</label>
                 <input ng-model="busAdress" type="text">
             </md-input-container>
-            <md-button  class="md-raised md-primary">Voilà l'adresse</md-button>
+            <md-button  class="md-raised md-primary">Voilà l'adresse</md-button><br/>
+            <div>
+                <img src="images/light-bulb.webp" ng-click="clueStep1 = true" class="clueImage"/>
+                <div ng-if="clueStep1">
+                    Une fois que vous avez mis les lettres dans le bon sens. <br/>
+                    Lisez bien le texte, vous trouverez un mot qui donne la clef de déchiffrage: Une lettre = un Chiffre.
+                </div>
+            </div>
+            <div style="clear:both;">
+                <img src="images/light-bulb.webp" ng-click="clueStep2 = true" class="clueImage"/>
+                <div ng-if="clueStep2">
+                    Avocat est la clef: A vaut K<br/> Déchiffrez les 4 lettres à partir de ce code.
+                </div>
+            </div>
         </form>
     </md-card>
     <md-card  ng-if="step == 2">

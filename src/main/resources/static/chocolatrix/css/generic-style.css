@@ -52,3 +52,9 @@ md-select.small {
     display: inline-block;
     width: 50px;
 }
+
+.clueImage {
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+}
