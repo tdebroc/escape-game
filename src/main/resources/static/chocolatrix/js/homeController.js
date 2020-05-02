@@ -1,6 +1,6 @@
 app.controller('HomeCtrl', ["$scope", "$timeout",
                             function($scope, $timeout) {
-  let answers = ["", "57 fqny", "43", "81", "36;6;85;oui", "compiègne", "oui"]
+  let answers = ["", "57 rue de la paix", "43", "81", "36;6;85;oui", "compiègne", "oui"]
   $scope.step = 0;
   $scope.passengerCount = 0;
   $scope.showMissionAcceptedButton = true;
