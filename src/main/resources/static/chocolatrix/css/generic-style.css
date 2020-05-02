@@ -46,7 +46,6 @@ md-input-container.small {
     width: 50px;
     line-height: normal;
     padding-bottom: 3px;
-    border: grey 1px solid;
 }
 
 md-input-container.small input {

@@ -21,10 +21,12 @@ app.controller('HomeCtrl', ["$scope", "$timeout",
   }
 
   $scope.answer4thStep = function(a, b, c, d) {
+      if (!a || !b || !c || !d) {showMissingFields();return;};
       $scope.answer(a + ";" + b + ";" + c + ";" + d, 4);
   }
 
   $scope.answer6thStep = function(a, b, c, d, e, f, g) {
+      if (!a || !b || !c || !d || !e || !f) {showMissingFields();return;};
       $scope.answer(a + ";" + b + ";" + c + ";" + d + ";" + e + ";" + f + ";" + g, 6);
   }
 
@@ -33,6 +35,14 @@ app.controller('HomeCtrl', ["$scope", "$timeout",
     $scope.wrongAnswer = true;
     $timeout(function() {
         $scope.wrongAnswer = false;
+    }, 3000);
+  }
+
+  $scope.missingFields = false;
+  function showMissingFields() {
+    $scope.missingFields = true;
+    $timeout(function() {
+        $scope.missingFields = false;
     }, 3000);
   }
 

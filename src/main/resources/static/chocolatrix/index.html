@@ -26,6 +26,11 @@
             <h2 class="md-flex">Mauvaise Réponse - ré-essayez !</h2>
         </div>
     </md-toolbar>
+    <md-toolbar class="md-warn wrongAnswer" ng-if="missingFields">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Il manque des réponses, remplissez tout les champs !</h2>
+        </div>
+    </md-toolbar>
     <h1 id="main-title"> A la recherche de l’antidote </h1>
     <md-card id="step0"  ng-if="step == 0" >
         <p  dir-terminal-type="" duration="10000" on-completion="acceptMissionButton()">
