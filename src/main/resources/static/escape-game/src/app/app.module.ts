@@ -14,6 +14,7 @@ import { EmptydrawerComponent } from './emptydrawer/emptydrawer.component';
 import { Livingroom3drawer1Component } from './livingroom3drawer1/livingroom3drawer1.component';
 import { ItemsComponent } from './items/items.component';
 import { Livingroom1drawerPurpleComponent } from './livingroom1drawer-purple/livingroom1drawer-purple.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,14 @@ import { Livingroom1drawerPurpleComponent } from './livingroom1drawer-purple/liv
     EmptydrawerComponent,
     Livingroom3drawer1Component,
     ItemsComponent,
-    Livingroom1drawerPurpleComponent
+    Livingroom1drawerPurpleComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: LandingpageComponent },
       { path: 'livingroom1', component: Livingroom1Component },
       { path: 'livingroom2', component: Livingroom2Component },
       { path: 'livingroom3', component: Livingroom3Component },
@@ -40,6 +42,7 @@ import { Livingroom1drawerPurpleComponent } from './livingroom1drawer-purple/liv
       { path: 'emptydrawer', component: EmptydrawerComponent },
       { path: 'livingroom3drawer1', component: Livingroom3drawer1Component },
       { path: 'livingroom1drawerPurple', component: Livingroom1drawerPurpleComponent },
+      { path: 'home', component: HomeComponent },
     ]),
     BrowserAnimationsModule
   ],

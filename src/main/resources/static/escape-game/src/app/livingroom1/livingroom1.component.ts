@@ -17,7 +17,7 @@ export class Livingroom1Component implements OnInit {
   }
 
   openDrawer2() {
-    if (this.gameService.isInCurrentItems(AppConstants.KEY_DRAWER1)) {
+    if (this.gameService.isItemSelected(AppConstants.KEY_DRAWER1)) {
       this.gameService.useItem(AppConstants.KEY_DRAWER1);
     }
     if (this.gameService.hasItemBeenUsed(AppConstants.KEY_DRAWER1)) {

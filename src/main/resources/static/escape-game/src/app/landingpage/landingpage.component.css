@@ -1,0 +1,13 @@
+.home-root {
+  background-size: 950px 650px;
+  height: 100%;
+  background-color: rgb(10,10,10);
+  color: white;
+}
+
+.launch-escape-game {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 300px;
+}
