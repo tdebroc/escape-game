@@ -1,0 +1,33 @@
+#livingroom1-root {
+  background-image: url("images/livingroom1.jpg");
+  background-size: 950px 650px;
+  height: 100%;
+}
+
+.door {
+  position: absolute;
+  background-image: url("images/door.png");
+  background-size: 100% 100%;
+  height: 429px;
+  width: 136px;
+  left: 69px;
+  top: 50px;
+}
+
+.livingroom1-drawer2 {
+  position: absolute;
+  top: 450px;
+  width: 61px;
+  height: 19px;
+  left: 218px;
+}
+
+.space-invaders {
+  position: absolute;
+  background-image: url("images/spaceInvaders.jpg");
+  background-size: 100% 100%;
+  height: 110px;
+  width: 154px;
+  left: 418px;
+  top: 95px;
+}

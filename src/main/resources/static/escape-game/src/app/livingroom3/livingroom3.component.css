@@ -1,0 +1,18 @@
+.tv-desk {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  background-image: url("images/tv-desk.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 170px;
+  bottom: 120px;
+}
+.open-drawer1 {
+  height: 50px;
+  width: 183px;
+  top: 451px;
+  left: 379px;
+  z-index: 9999;
+  position: absolute;
+}

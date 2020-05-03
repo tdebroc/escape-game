@@ -1,0 +1,26 @@
+.home-root {
+  background-size: 950px 650px;
+  height: 100%;
+  background-color: rgb(10,10,10);
+  color: white;
+}
+
+.space-invader {
+  display: block;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#startText {
+  margin-left : 100px;
+  margin-right : 100px;
+}
+
+.launch-escape-game {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: black;
+}
+
+app-root {
+  background: white;
+  display: block;
+  height: 650px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 900px;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/******************************************************
+  Items
+ ******************************************************/
+app-items {
+  position: absolute;
+  right: -160px;
+  width: 150px;
+  height: 100%;
+  top: 0px;
+}
+
+
+/******************************************************
+  Navigation
+ ******************************************************/
+
+.goToLeft {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  z-index: 9000;
+}
+
+.goToRight {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  right: 0;
+  z-index: 9000;
+}
+
+.goToBottom {
+  bottom: 0px;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  z-index: 9000;
+}
+
+/******************************************************
+  Wall
+ ******************************************************/
+
+.wallColor {
+  background-color: #FECBD5;
+}
+
+.carpetColor {
+  background-color: #18A39E;
+}
+
+.wallBlock {
+  height: 475px;
+  width: 100%;
+}
+
+.wallBlock {
+  position: absolute;
+  height: 475px;
+  width: 100%;
+  z-index: 10;
+}
+
+.carpetBlock {
+  position: absolute;
+  top: 475px;
+  height: 200px;
+  width: 100%;
+  z-index: 10;
+}
+
+
+/******************************************************
+  Windows
+ ******************************************************/
+.backWindow {
+  position: relative;
+  background-color: #90D3F3;
+  z-index: 90;
+}
+.window {
+  position: absolute;
+  height: 200px;
+  width: 136px;
+}
+.window-container {
+  position: relative;
+  height: 100%;
+}
+.window-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("assets/images/window.png");
+  background-size: 100% 100%;
+  z-index: 100;
+}
+.backWindow {
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 160px;
+  width: 106px;
+  z-index: 90;
+}
+.window1 {
+  left: 100px;
+  top: 50px;
+}
+.window2 {
+  left: 350px;
+  top: 50px;
+}
+.window3 {
+  left: 600px;
+  top: 50px;
+}
+

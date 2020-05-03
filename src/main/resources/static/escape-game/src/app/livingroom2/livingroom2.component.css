@@ -1,0 +1,36 @@
+.cupboard {
+  position: absolute;
+  height: 500px;
+  width: 800px;
+  background-image: url("images/cupboard.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 50px;
+  bottom: 120px;
+}
+.drawer1 {
+  height: 50px;
+  width: 105px;
+  top: 321px;
+  left: 397px;
+  z-index: 9999;
+  position: absolute;
+}
+
+.drawer2 {
+  height: 50px;
+  width: 105px;
+  top: 371px;
+  left: 397px;
+  z-index: 9999;
+  position: absolute;
+}
+
+.drawer3 {
+  height: 87px;
+  width: 105px;
+  top: 421px;
+  left: 397px;
+  z-index: 9999;
+  position: absolute;
+}

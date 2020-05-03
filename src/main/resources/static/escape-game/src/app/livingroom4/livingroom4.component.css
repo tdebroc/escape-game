@@ -1,0 +1,10 @@
+.desk {
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  background-image: url("images/desk.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 200px;
+  bottom: 100px;
+}

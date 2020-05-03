@@ -1,0 +1,7 @@
+<div *ngFor="let item of getItems() | keyvalue">
+  <div class="item-container"
+       [class.selectedItem]="isItemSelected(item.key)">
+    <img src="{{item.key}}.png" class="image-item"
+        (click)="selectItem(item.key)"/>
+  </div>
+</div>
