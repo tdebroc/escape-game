@@ -10,18 +10,21 @@ import { AppConstants } from '../app.constants';
 export class Livingroom3drawer1Component implements OnInit {
 
   constructor(private gameService : GameService) { }
-
   ngOnInit(): void {
   }
-
   addKey() {
-    console.log(this.hasKeyBeenTaken());
     this.gameService.addItem(AppConstants.KEY_DRAWER1);
   }
-
   hasKeyBeenTaken() {
     return this.gameService.hasItemBeenTaken(AppConstants.KEY_DRAWER1);
   }
 
 
+  addCarrot() {
+    this.gameService.addItem(AppConstants.CARROTS);
+  }
+
+  hasCarrotBeenTaken() {
+    return this.gameService.hasItemBeenTaken(AppConstants.CARROTS);
+  }
 }
