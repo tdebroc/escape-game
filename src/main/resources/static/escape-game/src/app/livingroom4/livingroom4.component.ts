@@ -7,7 +7,6 @@ import {AppConstants} from "../app.constants";
   styleUrls: ['./livingroom4.component.css']
 })
 export class Livingroom4Component implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

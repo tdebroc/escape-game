@@ -8,6 +8,16 @@
   left: 170px;
   bottom: 120px;
 }
+.soucoupe-et-perroquet {
+  position: absolute;
+  height: 107px;
+  width: 226px;
+  background-image: url("images/soucoupe-et-perroquet.jpg");
+  background-size: 100% 100%;
+  z-index: 200;
+  left: 356px;
+  bottom: 297px;
+}
 .open-drawer1 {
   height: 50px;
   width: 183px;

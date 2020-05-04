@@ -1,0 +1,44 @@
+.home-root {
+  background-size: 950px 650px;
+  height: 100%;
+  background-color: rgb(10,10,10);
+  color: white;
+}
+.phone-container {
+  position: relative;
+  margin-left: 150px;
+  width: 500px;
+}
+.phone-background {
+  position: absolute;
+  top: 230px;
+  left: 130px;
+  height: 350px;
+  width: 250px;
+  background-color: black;
+}
+.phone {
+  display: block;
+  max-width: 100%;
+  position: absolute;
+}
+.total-score {
+  font-size: 30px;
+}
+
+.snapped-invader-list-container {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.snapped-invader-container {
+  height : 90px;
+  width : 90px;
+  float: left;
+  margin: 5px;
+}
+
+.snapped-invader-container img {
+  width: 100%;
+  height: 100%;
+}

@@ -4,5 +4,17 @@
   <div class="openedWindow">
   </div>
   <a (click)="backClicked()"><div class="pointer goToBottom"></div></a>
+  <div class="phone-for-picture" *ngIf="isPhoneSelected()"
+    (click)="takePicture()">
+  </div>
+  <div [style.left.px]="invadersToSnap[windowId].left"
+       [style.top.px]="invadersToSnap[windowId].top"
+       [style.width.px]="invadersToSnap[windowId].width"
+       [style.height.px]="invadersToSnap[windowId].height"
+       class="invader-to-pick-block"
+       (click)="snapInvader()"
+  ></div>
+  <div id="scoreToAdd">+ {{ invadersToSnap[windowId].score }}</div>
+  <div id="picture-flash"></div>
 </div>
 

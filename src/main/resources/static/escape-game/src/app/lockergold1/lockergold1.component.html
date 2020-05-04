@@ -1,0 +1,13 @@
+<div class="locker-1-bg">
+  <div class="locker-1" *ngIf="!isLockerOpened()">
+    <div (click)="validate()" class="validate-code pointer"></div>
+    <div class="code-container total-score">
+      {{code}}
+      <div (click)="increment(0)" class="increment0 increment"></div>
+      <div (click)="increment(1)" class="increment1 increment"></div>
+      <div (click)="increment(2)" class="increment2 increment"></div>
+      <div (click)="increment(3)" class="increment3 increment"></div>
+    </div>
+  </div>
+  <a [routerLink]="['/livingroom4']"><div class="goToBottom"></div></a>
+</div>

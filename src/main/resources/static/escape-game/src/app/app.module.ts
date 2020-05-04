@@ -17,6 +17,8 @@ import { ItemsComponent } from './items/items.component';
 import { Livingroom1drawerPurpleComponent } from './livingroom1drawer-purple/livingroom1drawer-purple.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { LivingroomWindowComponent } from './livingroom-window/livingroom-window.component';
+import { PhoneInvadersComponent } from './phone-invaders/phone-invaders.component';
+import { Lockergold1Component } from './lockergold1/lockergold1.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LivingroomWindowComponent } from './livingroom-window/livingroom-window
     ItemsComponent,
     Livingroom1drawerPurpleComponent,
     LandingpageComponent,
-    LivingroomWindowComponent
+    LivingroomWindowComponent,
+    PhoneInvadersComponent,
+    Lockergold1Component
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { LivingroomWindowComponent } from './livingroom-window/livingroom-window
       { path: 'livingroom1drawerPurple', component: Livingroom1drawerPurpleComponent },
       { path: 'livingroom-window/:windowId', component: LivingroomWindowComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'phone-invaders', component: PhoneInvadersComponent },
+      { path: 'lockergold1', component: Lockergold1Component },
     ]),
     BrowserAnimationsModule
   ],

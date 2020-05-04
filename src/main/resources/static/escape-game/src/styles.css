@@ -21,6 +21,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: pointer;
 }
 
+@font-face {
+  font-family: "Atari";
+  src: url("assets/fonts/AtariSmall.ttf") format("truetype");
+}
+
 /******************************************************
   Items
  ******************************************************/
@@ -35,6 +40,7 @@ app-items {
 .key-bg {
   background-image: url("assets/images/items/key_drawer1.png");
 }
+
 
 /******************************************************
   Navigation
@@ -127,4 +133,11 @@ app-items {
   height: 160px;
   width: 106px;
   z-index: 90;
+  top: 8px;
+}
+
+.total-score {
+  font-family: Atari, fantasy;
+  color: orange;
+  text-align: center;
 }

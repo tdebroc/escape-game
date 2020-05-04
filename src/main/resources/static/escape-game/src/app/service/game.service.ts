@@ -7,7 +7,9 @@ export class GameService {
   currentItems = {};
   usedItems = {};
   selectedItemName;
-  constructor() { }
+  constructor() {
+    //this.loadGame();
+  }
 
   getCurrentItems() {
     return this.currentItems;
@@ -43,9 +45,11 @@ export class GameService {
   // LocalStorage
   localStorageKey = "Saved";
   loadGame() {
+    console.log("loading Game")
     this.currentItems = JSON.parse(localStorage.getItem(this.localStorageKey))['currentItems'];
     this.usedItems = JSON.parse(localStorage.getItem(this.localStorageKey))['usedItems'];
   }
+
   saveGame() {
     let toSave = {
       "currentItems" : this.currentItems,
@@ -53,4 +57,7 @@ export class GameService {
     }
     localStorage.setItem(this.localStorageKey, JSON.stringify(toSave));
   }
+
+
+
 }
