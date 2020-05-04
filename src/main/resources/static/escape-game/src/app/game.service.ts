@@ -13,8 +13,8 @@ export class GameService {
     return this.currentItems;
   }
 
-  addToItem(name) {
-    this.currentItems[name] = true;
+  addItem(name, opt?) {
+    this.currentItems[name] = opt ? opt : true;
   }
 
   hasItemBeenTaken(name) {
@@ -37,5 +37,20 @@ export class GameService {
   useItem(KEY_DRAWER1: string) {
     this.usedItems[KEY_DRAWER1] = this.currentItems[KEY_DRAWER1];
     delete this.currentItems[KEY_DRAWER1];
+  }
+
+
+  // LocalStorage
+  localStorageKey = "Saved";
+  loadGame() {
+    this.currentItems = JSON.parse(localStorage.getItem(this.localStorageKey))['currentItems'];
+    this.usedItems = JSON.parse(localStorage.getItem(this.localStorageKey))['usedItems'];
+  }
+  saveGame() {
+    let toSave = {
+      "currentItems" : this.currentItems,
+      "usedItems" : this.usedItems
+    }
+    localStorage.setItem(this.localStorageKey, JSON.stringify(toSave));
   }
 }

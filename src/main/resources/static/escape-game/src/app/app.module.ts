@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +16,7 @@ import { Livingroom3drawer1Component } from './livingroom3drawer1/livingroom3dra
 import { ItemsComponent } from './items/items.component';
 import { Livingroom1drawerPurpleComponent } from './livingroom1drawer-purple/livingroom1drawer-purple.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { LivingroomWindowComponent } from './livingroom-window/livingroom-window.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     Livingroom3drawer1Component,
     ItemsComponent,
     Livingroom1drawerPurpleComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    LivingroomWindowComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule.forRoot([
       { path: '', component: LandingpageComponent },
       { path: 'livingroom1', component: Livingroom1Component },
@@ -42,6 +46,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
       { path: 'emptydrawer', component: EmptydrawerComponent },
       { path: 'livingroom3drawer1', component: Livingroom3drawer1Component },
       { path: 'livingroom1drawerPurple', component: Livingroom1drawerPurpleComponent },
+      { path: 'livingroom-window/:windowId', component: LivingroomWindowComponent },
       { path: 'home', component: HomeComponent },
     ]),
     BrowserAnimationsModule

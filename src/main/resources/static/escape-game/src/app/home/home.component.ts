@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     const target = document.querySelector('#startText')
     const writer = new Typewriter(target, {
       loop: false,
-      typeColor: 'white',
+      typeColor: '#01FF40',
       typeSpeed: 60
     });
     setTimeout(function() {

@@ -1,0 +1,22 @@
+.livingroom-window-root {
+  height: 100%;
+  width: 100%;
+}
+
+.openedWindow {
+  height: 555px;
+  width: 100%;
+  background-image: url("images/window-opened.png");
+  background-size: 100% 100%;
+  z-index: 1000;
+  top: 50px;
+  position: absolute;
+}
+
+.insideWindowImage {
+  position: absolute;
+  top: 135px;
+  left: 185px;
+  width: 513px;
+  height: 400px;
+}

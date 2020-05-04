@@ -1,7 +1,18 @@
+<div class="button"Game (click)="saveGame()">
+  <button mat-fab color="primary" aria-label="Save Game">
+    <mat-icon>save</mat-icon>
+  </button>
+</div>&nbsp;
+<div class="button" (click)="loadGame()">
+  <button mat-fab color="primary" aria-label="Load Game">
+    <mat-icon>get_app</mat-icon>
+  </button>
+</div>
+
 <div *ngFor="let item of getItems() | keyvalue">
   <div class="item-container"
        [class.selectedItem]="isItemSelected(item.key)">
-    <img src="{{item.key}}.png" class="image-item"
+    <img src="assets/images/items/{{item.key}}.png" class="image-item"
         (click)="selectItem(item.key)"/>
   </div>
 </div>

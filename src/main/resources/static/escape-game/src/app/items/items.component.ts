@@ -21,6 +21,11 @@ export class ItemsComponent implements OnInit {
   isItemSelected(name) {
     return this.gameService.isItemSelected(name);
   }
-
+  saveGame() {
+    this.gameService.saveGame();
+  }
+  loadGame() {
+    this.gameService.loadGame();
+  }
 
 }

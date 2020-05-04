@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import { AppConstants } from '../app.constants';
 
 @Component({
   selector: 'app-livingroom1drawer-purple',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Livingroom1drawerPurpleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
   ngOnInit(): void {
   }
 
+  takePhone() {
+    this.gameService.addItem(AppConstants.PHONE_ITEM, {});
+  }
 }

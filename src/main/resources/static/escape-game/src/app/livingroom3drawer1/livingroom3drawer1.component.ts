@@ -16,7 +16,7 @@ export class Livingroom3drawer1Component implements OnInit {
 
   addKey() {
     console.log(this.hasKeyBeenTaken());
-    this.gameService.addToItem(AppConstants.KEY_DRAWER1);
+    this.gameService.addItem(AppConstants.KEY_DRAWER1);
   }
 
   hasKeyBeenTaken() {

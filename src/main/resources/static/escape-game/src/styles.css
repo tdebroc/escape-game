@@ -17,6 +17,10 @@ app-root {
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.pointer {
+  cursor: pointer;
+}
+
 /******************************************************
   Items
  ******************************************************/
@@ -28,6 +32,9 @@ app-items {
   top: 0px;
 }
 
+.key-bg {
+  background-image: url("assets/images/items/key_drawer1.png");
+}
 
 /******************************************************
   Navigation
@@ -121,16 +128,3 @@ app-items {
   width: 106px;
   z-index: 90;
 }
-.window1 {
-  left: 100px;
-  top: 50px;
-}
-.window2 {
-  left: 350px;
-  top: 50px;
-}
-.window3 {
-  left: 600px;
-  top: 50px;
-}
-

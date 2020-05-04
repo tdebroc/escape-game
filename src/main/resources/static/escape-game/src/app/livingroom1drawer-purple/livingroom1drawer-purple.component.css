@@ -5,3 +5,10 @@
   background-image: url("../../assets/images/emptyDrawer.jpg");
   background-size: 100% 100%;
 }
+.phone {
+  height: 300px;
+  position: absolute;
+  left: 250px;
+  top: 200px;
+  transform: rotate(-45deg);
+}

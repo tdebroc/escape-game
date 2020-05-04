@@ -16,3 +16,11 @@
   z-index: 9999;
   position: absolute;
 }
+.window0 {
+  left: 100px;
+  top: 50px;
+}
+.window1 {
+  left: 600px;
+  top: 50px;
+}

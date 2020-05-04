@@ -19,3 +19,7 @@
 .selectedItem {
   border: 3px white solid;
 }
+
+.button {
+  display: inline-block;
+}
