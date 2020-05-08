@@ -29,7 +29,36 @@
   top: 485px;
   position: absolute;
 }
-
+.macbook {
+  height: 125px;
+  width: 200px;
+  background-image: url("images/macbook.png");
+  background-size: 100% 100%;
+  z-index: 120;
+  left: 199px;
+  top: 275px;
+  position: absolute;
+}
+.white-cup-1 {
+  height: 50px;
+  width: 50px;
+  background-image: url("images/white-cup.png");
+  background-size: 100% 100%;
+  z-index: 150;
+  left: 398px;
+  top: 346px;
+  position: absolute;
+}
+.white-cup-2 {
+  height: 50px;
+  width: 50px;
+  background-image: url("images/white-cup.png");
+  background-size: 100% 100%;
+  z-index: 150;
+  left: 438px;
+  top: 356px;
+  position: absolute;
+}
 .window2 {
   left: 50px;
   top: 50px;

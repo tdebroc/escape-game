@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     }, 1500)
 
     let audio = new Audio();
-    audio.src = "assets/mp3/space-invaders-are-back.mp3";
+    audio.src = "assets/sounds/space-invaders-are-back.mp3";
     audio.load();
     audio.play();
   }

@@ -1,0 +1,10 @@
+<div id="inside-cupboard-left-inner">
+  <img src="assets/images/items/remote.png"
+       class="remote"
+       (click)="takeRemote()"
+       *ngIf="!hasRemoteBeenTaken()"/>
+  <div class="grimoire pointer" (click)="takeGrimoire()" *ngIf="!hasGrimoireBeenTaken()">
+
+  </div>
+  <a [routerLink]="['/livingroom2']"><div class="goToBottom"></div></a>
+</div>

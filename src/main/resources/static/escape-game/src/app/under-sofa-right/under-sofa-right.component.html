@@ -1,0 +1,5 @@
+<div class="kitten-under-sofa">
+  <a [routerLink]="['/livingroom1']"> <div class="goToBottom"></div></a>
+  <img src="assets/images/trophies/nurse-invader.png"
+       class="nurse-invader pointer" *ngIf="!isNurseTaken()" (click)="takeNurse()"/>
+</div>

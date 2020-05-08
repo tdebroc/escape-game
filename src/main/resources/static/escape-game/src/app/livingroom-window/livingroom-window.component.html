@@ -10,11 +10,22 @@
   <div [style.left.px]="invadersToSnap[windowId].left"
        [style.top.px]="invadersToSnap[windowId].top"
        [style.width.px]="invadersToSnap[windowId].width"
-       [style.height.px]="invadersToSnap[windowId].height"
+       [style.height.px]="(invadersToSnap[windowId].height + 80)"
        class="invader-to-pick-block"
        (click)="snapInvader()"
   ></div>
   <div id="scoreToAdd">+ {{ invadersToSnap[windowId].score }}</div>
   <div id="picture-flash"></div>
+  <div class="invader-text">
+    <span *ngFor="let el of invadersToSnap[windowId].legend.split('')">
+      <span *ngIf="inInvaderLetter(el)">
+        <img class="" src="assets/images/invaders/spaceInvaders-{{el.toLowerCase()}}.png"/>
+      </span>
+      <span class="letter" *ngIf="!inInvaderLetter(el)">{{el}}</span>
+    </span>
+  </div>
+  <div class="play-music-button pointer" (click)="playSong()"></div>
+
+
 </div>
 

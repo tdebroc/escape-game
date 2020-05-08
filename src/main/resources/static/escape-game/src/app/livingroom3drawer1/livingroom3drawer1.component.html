@@ -1,5 +1,7 @@
 <div id="emptydrawer-root">
-  <img class="carrots" src="assets/images/items/carrots.png" (click)="addCarrot()" *ngIf="!hasCarrotBeenTaken()"/>
+  <img class="carrots" src="../../assets/images/trophies/carrots.png" (click)="addCarrot()" *ngIf="!hasCarrotBeenTaken()"/>
   <div class="key key-bg" (click)="addKey()" *ngIf="!hasKeyBeenTaken()"></div>
+  <div class="grimoire"></div>
+
   <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>
 </div>

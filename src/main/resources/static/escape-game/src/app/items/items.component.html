@@ -2,7 +2,7 @@
   <button mat-fab color="primary" aria-label="Save Game">
     <mat-icon>save</mat-icon>
   </button>
-</div>&nbsp;
+</div>
 <div class="button" (click)="loadGame()">
   <button mat-fab color="primary" aria-label="Load Game">
     <mat-icon>get_app</mat-icon>
@@ -10,9 +10,10 @@
 </div>
 
 <div *ngFor="let item of getItems() | keyvalue">
-  <div class="item-container cursor" [class.selectedItem]="isItemSelected(item.key)">
-    <div class="magnifying-glass cursor" *ngIf="isPhone(item.key)" (click)="clickPhoneMagnifyingGlass()"></div>
-    <img src="assets/images/items/{{item.key}}.png" class="image-item cursor"
-        (click)="selectItem(item.key)"/>
+  <div class="item-container cursor" [class.selectedItem]="isItemSelected(item.key)"
+       (click)="selectItem(item.key)">
+    <div class="magnifying-glass cursor" *ngIf="isZoomabledItem(item.key)"
+         (click)="clickMagnifyingGlass(item.key)"></div>
+    <img src="assets/images/items/{{item.key}}.png" class="image-item cursor"/>
   </div>
 </div>

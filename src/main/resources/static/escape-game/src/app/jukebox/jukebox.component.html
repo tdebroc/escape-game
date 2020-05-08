@@ -1,0 +1,21 @@
+<div id="jukebox-root">
+  <div class="wallColor wallBlock"></div>
+  <div class="carpetColor carpetBlock"></div>
+  <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>
+
+  <div class="jukebox">
+    <form class="jukebox-form" (submit)="launchSong()">
+      <mat-form-field class="song-login">
+        <input matInput placeholder="X'XX X XXXXX XXXXX" value="" [(ngModel)]="song"
+               name="song" autocomplete="off">
+      </mat-form-field>
+      <div class="wrongAnswer" *ngIf="wrongAnswer">
+        I only know 1 Song !
+      </div>
+      <button class="playSongButton pointer" type="submit"></button>
+    </form>
+  </div>
+
+  <img src="assets/images/trophies/infirmary-invader.png" class="pointer infirmary-trophy"
+       (click)="takeInfirmaryTrophy()" *ngIf="shouldShowInfirmaryTrophy()"/>
+</div>

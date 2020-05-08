@@ -34,15 +34,15 @@ export class ItemsComponent implements OnInit {
     this.gameService.loadGame();
   }
 
-  isPhone(key) {
-    return key == AppConstants.PHONE_ITEM;
+  isZoomabledItem(key: string) {
+    return this.getItems()[key].zoomUrl;
   }
 
-  clickPhoneMagnifyingGlass() {
-    if (this.router.url === "/phone-invaders") {
+  clickMagnifyingGlass(key: string) {
+    if (this.router.url === this.getItems()[key].zoomUrl) {
       this._location.back();
     } else {
-      this.router.navigate(['/phone-invaders']);
+      this.router.navigate([this.getItems()[key].zoomUrl]);
     }
   }
 }

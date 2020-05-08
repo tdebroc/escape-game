@@ -1,0 +1,35 @@
+.coffee-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/coffee-bear.jpg");
+  background-size: 100% 100%;
+}
+.coffee-box {
+  position: absolute;
+  height: 520px;
+  width: 400px;
+  background-image: url("images/coffe-box.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 530px;
+  top: 134px;
+}
+.decaf-text {
+  color: white;
+  font-size: 50px;
+  font-family: cursive;
+  top: 155px;
+  position: absolute;
+  left: 50px;
+  letter-spacing: 19px;
+}
+.decaf-invaders-container {
+  position: absolute;
+  top: 155px;
+  left: 41px;
+}
+.decaf-invaders-container img {
+  width: 51px;
+  margin-right: 5px;
+}

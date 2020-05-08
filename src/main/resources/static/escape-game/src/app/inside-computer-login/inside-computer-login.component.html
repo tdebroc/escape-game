@@ -1,0 +1,27 @@
+<div id="macbook-login-bg">
+  <div id="macbook-login">
+    <div id="login-interface">
+      <form class="login-form" (submit)="doLogin()">
+        <mat-form-field class="input-login">
+          <mat-label>I am XXXXXXX</mat-label>
+          <input matInput placeholder="XXXXXXX" value="" [(ngModel)]="login"
+                 name="login" autocomplete="off">
+        </mat-form-field>
+        <br/>
+        <div class="interline"></div>
+        <mat-form-field class="input-password">
+          <mat-label>My Coffee ?</mat-label>
+          <input matInput placeholder="XXXXX" [(ngModel)]="password"
+                 name="password" autocomplete="off">
+        </mat-form-field>
+        <button class="login-button pointer" type="submit"></button>
+        <div class="wrongAnswer" *ngIf="wrongAnswer">
+          Wrong login/password
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <a [routerLink]="['/livingroom4']"><div class="goToBottom"></div></a>
+</div>
+

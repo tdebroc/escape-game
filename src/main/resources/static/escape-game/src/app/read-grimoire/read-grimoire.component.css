@@ -1,0 +1,43 @@
+#inside-grimoire {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  background-image: url("images/inside-grimoire.png");
+  background-size: 100% 100%;
+}
+
+.hexa-ascii {
+  opacity: 0.7;
+  height: 529px;
+  left: 117px;
+  position: absolute;
+  top: 50px;
+}
+.green-space-invader {
+  height: 100px;
+  left: 75px;
+  top: 250px;
+  position: absolute;
+}
+.clipart-bubble {
+  height: 370px;
+  width: 320px;
+  background-image: url("images/comic-clipart-bubble.png");
+  background-size: 100% 100%;
+  z-index: 120;
+  left: 142px;
+  top: 015px;
+  position: absolute;
+}
+.inner-text {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  left: 90px;
+  top: 50px;
+  position: absolute;
+}
+.next-page {
+  position: absolute;
+  bottom: 100px;
+  right: 200px;
+}

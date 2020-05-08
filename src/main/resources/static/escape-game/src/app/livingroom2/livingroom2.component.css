@@ -8,6 +8,24 @@
   left: 50px;
   bottom: 120px;
 }
+.wood-plank {
+  position: absolute;
+  height: 75px;
+  width: 150px;
+  background-image: url("images/wood-plank.png");
+  background-size: 100% 100%;
+  z-index: 120;
+  left: 225px;
+  bottom: 200px;
+}
+.leftDoorCupboard {
+  position: absolute;
+  height: 187px;
+  width: 208px;
+  z-index: 100;
+  left: 187px;
+  top: 319px;
+}
 .drawer1 {
   height: 50px;
   width: 105px;
@@ -34,3 +52,15 @@
   z-index: 9999;
   position: absolute;
 }
+.clock-digital {
+  position: absolute;
+  height: 40px;
+  width: 100px;
+  background-image: url("../../assets/images/various/clock-digital.png");
+  background-size: 100% 100%;
+  z-index: 120;
+  left: 405px;
+  top: 267px;
+}
+
+

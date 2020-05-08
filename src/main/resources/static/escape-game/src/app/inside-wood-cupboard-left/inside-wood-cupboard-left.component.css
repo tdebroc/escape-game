@@ -1,0 +1,48 @@
+.inside-wood-cupboard-left {
+  background-image: url("images/inside-wood-cupboard-left.jpg");
+}
+
+.safe-padnum-lock {
+  background-image: url("images/safe-padnum-lock.png");
+  height: 400px;
+  width: 500px;
+  left: 150px;
+  top: 140px;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.handle-safe {
+  height: 150px;
+  position: absolute;
+  width: 200px;
+  top: 150px;
+  left: 50px;
+}
+.padnum-container {
+  left: 296px;
+  top: 159px;
+  position: absolute;
+}
+.padnum-cell {
+  height: 23px;
+  width: 21px;
+}
+.padnum-container table {
+  border-collapse: collapse;
+}
+
+.safe-opened {
+  background-image: url("images/safeOpened.png");
+  height: 400px;
+  width: 650px;
+  left: 150px;
+  top: 140px;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.safe-opened img {
+  height: 70px;
+  top: 200px;
+  left: 200px;
+  position: absolute;
+}

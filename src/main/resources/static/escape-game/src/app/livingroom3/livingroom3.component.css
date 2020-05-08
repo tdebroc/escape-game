@@ -1,3 +1,13 @@
+.jukebox {
+  position: absolute;
+  height: 260px;
+  width: 150px;
+  background-image: url("../../assets/images/various/jukebox.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 20px;
+  bottom: 126px;
+}
 .tv-desk {
   position: absolute;
   height: 300px;
@@ -8,6 +18,7 @@
   left: 170px;
   bottom: 120px;
 }
+
 .soucoupe-et-perroquet {
   position: absolute;
   height: 107px;
@@ -18,6 +29,7 @@
   left: 356px;
   bottom: 297px;
 }
+
 .open-drawer1 {
   height: 50px;
   width: 183px;
@@ -26,11 +38,28 @@
   z-index: 9999;
   position: absolute;
 }
+
 .window0 {
   left: 100px;
   top: 50px;
 }
+
 .window1 {
-  left: 600px;
+  left: 700px;
   top: 50px;
 }
+
+.window6 {
+  left: 400px;
+  top: 50px;
+}
+
+.inside-wood-cupboard-left {
+  left: 181px;
+  height: 100px;
+  position: absolute;
+  top: 400px;
+  width: 190px;
+  z-index: 200;
+}
+

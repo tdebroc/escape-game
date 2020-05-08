@@ -26,12 +26,13 @@ export class LivingroomWindowComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.windowId = params.get('windowId');
     });
-    $(document).on('mousemove', function(e){
+    $(".livingroom-window-root").on('mousemove', function(e){
       $('.phone-for-picture').css({
-        left:  e.pageX - 300,
+        left:  e.pageX - 225,
         top:   e.pageY - 100
       });
     });
+    this.playSong();
   }
 
   backClicked() {
@@ -48,9 +49,13 @@ export class LivingroomWindowComponent implements OnInit {
     }
     this.takePicture();
     if (!this.phoneService.hadAlreadyBeenSnapped(this.windowId)) {
-      this.phoneService.snapInvader(this.windowId, this.invadersToSnap[this.windowId].score);
+      this.phoneService.snapInvader(this.windowId, this.getCurrentInvader().score);
       this.showScore();
     }
+  }
+
+  getCurrentInvader() {
+    return this.invadersToSnap[this.windowId];
   }
 
   showScore() {
@@ -67,5 +72,14 @@ export class LivingroomWindowComponent implements OnInit {
     pictureFlash.fadeOut( "slow", function() {
       $( "#picture-flash" ).hide();
     });
+    this.gameService.playSound("appareil-photo.mp3")
+  }
+
+  inInvaderLetter(el: string) {
+    return ['1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F'].indexOf(el) != -1;
+  }
+
+  playSong() {
+    this.gameService.playMusic(this.getCurrentInvader().song);
   }
 }

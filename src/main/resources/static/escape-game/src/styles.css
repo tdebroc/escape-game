@@ -15,7 +15,17 @@ app-root {
   width: 900px;
 }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.fullbg {
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .pointer {
   cursor: pointer;
@@ -24,6 +34,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @font-face {
   font-family: "Atari";
   src: url("assets/fonts/AtariSmall.ttf") format("truetype");
+}
+
+/******************************************************
+  Trophies
+ ******************************************************/
+app-trophy {
+  position: absolute;
+  left: -95px;
+  width: 150px;
+  height: 100%;
+  top: 0;
 }
 
 /******************************************************
@@ -47,26 +68,58 @@ app-items {
  ******************************************************/
 
 .goToLeft {
+  cursor: pointer;
   position: absolute;
   width: 50px;
   height: 100%;
   z-index: 9000;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.goToLeft:hover {
+  opacity: 1;
+  background: url("assets/images/arrows/left.png") no-repeat center;;
+  background-size: 70px;
+  background-position-x: -10px;
 }
 
 .goToRight {
+  cursor: pointer;
   position: absolute;
   width: 50px;
   height: 100%;
   right: 0;
   z-index: 9000;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.goToRight:hover {
+  opacity: 1;
+  background: url("assets/images/arrows/right.png") no-repeat center;;
+  background-size: 70px;
+  background-position-x: -10px;
 }
 
 .goToBottom {
-  bottom: 0px;
+  bottom: 0;
   position: absolute;
   height: 50px;
   width: 100%;
   z-index: 9000;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.goToBottom:hover {
+  opacity: 1;
+  background: url("assets/images/arrows/down.png") no-repeat center;;
+  background-size: 70px;
+}
+
+.login-form .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: .2375em 0 !important;
 }
 
 /******************************************************
@@ -110,15 +163,18 @@ app-items {
   background-color: #90D3F3;
   z-index: 90;
 }
+
 .window {
   position: absolute;
   height: 200px;
   width: 136px;
 }
+
 .window-container {
   position: relative;
   height: 100%;
 }
+
 .window-background {
   position: absolute;
   height: 100%;
@@ -127,6 +183,7 @@ app-items {
   background-size: 100% 100%;
   z-index: 100;
 }
+
 .backWindow {
   margin-left: 20px;
   margin-top: 10px;

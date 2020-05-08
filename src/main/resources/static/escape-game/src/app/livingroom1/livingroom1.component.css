@@ -13,6 +13,16 @@
   left: 69px;
   top: 50px;
 }
+.key-lock {
+  position: absolute;
+  background-image: url("images/key-lock.png");
+  background-size: 100% 100%;
+  height: 18px;
+  width: 18px;
+  left: 239px;
+  top: 450px;
+  z-index: 1000;
+}
 
 .livingroom1-drawer2 {
   position: absolute;
@@ -20,6 +30,7 @@
   width: 61px;
   height: 19px;
   left: 218px;
+  z-index: 5000;
 }
 
 .space-invaders {
@@ -31,3 +42,61 @@
   left: 418px;
   top: 95px;
 }
+.under-sofa-right {
+  left: 450px;
+  top: 500px;
+  height: 100px;
+  width: 250px;
+  position: absolute;
+}
+
+/******************/
+/*** LASER GAME ***/
+/******************/
+#space-invader-laser {
+  position: absolute;
+  background-image: url("../../assets/images/items/space-invader-laser.png");
+  background-size: 100% 100%;
+  height: 60px;
+  width: 75px;
+  cursor: none;
+  z-index: 5000;
+}
+.bullet {
+  background-color: black;
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  z-index: 2000;
+}
+.painting-white-bg {
+  position: absolute;
+  background-color: white;
+  height: 110px;
+  width: 154px;
+  left: 418px;
+  top: 95px;
+}
+.invader {
+  margin-left: 4px;
+  position: absolute;
+}
+.cat-fear {
+  position: absolute;
+  background-image: url("images/cat-fear.png");
+  background-size: 100% 100%;
+  height: 110px;
+  width: 154px;
+  left: 418px;
+  top: 495px;
+}
+#painting-bg {
+  position: absolute;
+  background-image: url("images/painting-bg.png");
+  background-size: 100% 100%;
+  height: 110px;
+  width: 154px;
+  left: 418px;
+  top: 95px;
+}
+

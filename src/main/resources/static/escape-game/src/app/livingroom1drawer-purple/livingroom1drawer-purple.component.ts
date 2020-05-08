@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../service/game.service';
 import { AppConstants } from '../app.constants';
+import { PhoneService } from "../service/phone.service";
 
 @Component({
   selector: 'app-livingroom1drawer-purple',
@@ -9,17 +10,15 @@ import { AppConstants } from '../app.constants';
 })
 export class Livingroom1drawerPurpleComponent implements OnInit {
   AppConstants
-  constructor(private gameService : GameService) { }
+  constructor(private gameService : GameService,
+              private phoneService : PhoneService) { }
 
   ngOnInit(): void {
     this.AppConstants = AppConstants;
   }
 
   takePhone() {
-    let opt = {};
-    opt["totalScore"] = 0;
-    opt[AppConstants.PHONE_ITEM_INVADERS] = {};
-    this.gameService.addItem(AppConstants.PHONE_ITEM, opt);
+    this.gameService.addItem(AppConstants.PHONE_ITEM, this.phoneService.getNewPhone());
   }
 
   hasPhoneBeenTaken() {

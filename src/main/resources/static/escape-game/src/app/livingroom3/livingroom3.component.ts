@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from "../service/game.service";
+import {AppConstants} from "../app.constants";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-livingroom3',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Livingroom3Component implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private gameService : GameService,
+              private router : Router) {
+    this.gameService.stopCurrentMusic();
   }
 
+  ngOnInit(): void {
+    this.gameService.stopCurrentMusic();
+  }
+
+  openTv() {
+    if (this.gameService.isItemSelected(AppConstants.REMOTE)) {
+      this.router.navigate(['/watching-tv'])
+    }
+  }
 }

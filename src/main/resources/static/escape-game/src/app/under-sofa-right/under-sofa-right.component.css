@@ -1,0 +1,13 @@
+.kitten-under-sofa {
+  background-image: url('images/Kitten-hiding.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.nurse-invader {
+  height: 250px;
+  left: 520px;
+  top: 338px;
+  position: absolute;
+  transform: rotate(45deg);
+}

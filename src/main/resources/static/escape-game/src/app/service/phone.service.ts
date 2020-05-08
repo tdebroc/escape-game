@@ -7,12 +7,13 @@ import {GameService} from "./game.service";
 })
 export class PhoneService {
   invadersToSnap = [
-    {left : 372, top : 313, width : 41, height: 106, score : 642},
-    {left : 545, top : 260, width : 59, height: 56, score : 799},
-    {left : 505, top : 330, width : 20, height: 20, score : 664},
-    {left : 566, top : 280, width : 56, height: 68, score : 934},
-    {left : 559, top : 224, width : 56, height: 168, score : 442},
-    {left : 259, top : 284, width : 134, height: 159, score : 512},
+    {left : 372, top : 313, width : 41, height: 106, score : 642, legend : 'DUDE', song : "the-dude.mp3"},
+    {left : 545, top : 260, width : 59, height: 56, score : 799, legend : 'BEER', song : "beer-song.mp3"},
+    {left : 505, top : 330, width : 20, height: 20, score : 664, legend : 'PARIS', song : "edith-piaf-sous-le-ciel-de-paris.mp3"},
+    {left : 566, top : 280, width : 56, height: 68, score : 934, legend : 'MUSHROOM', song : "the-mushroom-song-original-song-by-eric-butler.mp3"},
+    {left : 559, top : 224, width : 56, height: 168, score : 442, legend : '212-226-4455', song : "teenage-mutant-ninja-turtles-theme.mp3"},
+    {left : 259, top : 284, width : 134, height: 159, score : 512, legend : "MOUNTAIN", song : "the-misty-mountains-cold-the-hobbit.mp3"},
+    {left : 330, top : 300, width : 200, height: 150, score : 230, legend : "XX'X A XXAXX XXXXX", song : "its-a-small-world-after.mp3"},
   ];
 
   constructor(private gameService : GameService) { }
@@ -39,7 +40,7 @@ export class PhoneService {
   }
 
   getTotalPoint() {
-    return this.getPhone().totalScore;
+    return this.getPhone() ? this.getPhone().totalScore : 0;
   }
 
   getSumOfScores() {
@@ -50,4 +51,11 @@ export class PhoneService {
     return sum;
   }
 
+  getNewPhone() {
+    let phone = {};
+    phone["totalScore"] = 0;
+    phone[AppConstants.PHONE_ITEM_INVADERS] = {};
+    phone["zoomUrl"] = "/phone-invaders";
+    return phone;
+  }
 }

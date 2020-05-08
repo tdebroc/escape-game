@@ -1,0 +1,17 @@
+<div id="inside-grimoire" class="pointer" (click)="changePage()">
+  <div *ngIf="page == 1" class="page1">
+    <img class="green-space-invader" src="assets/images/various/space-invader-green.png">
+    <div class="clipart-bubble">
+      <div class="inner-text">
+        Hexadecimal<br/>
+        SPACE (" ") = 20 <br/>
+        I = 49<br/>
+        J = 4A<br/>
+        P = 50<br/>
+      </div>
+    </div>
+    <div class="next-page">See next page...</div>
+  </div>
+  <img *ngIf="page == 2" src="../../assets/images/various/hexa-ascii.jpg" class="hexa-ascii"/>
+</div>
+

@@ -1,0 +1,61 @@
+.switch-channel {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 6000;
+}
+.goToBottom {
+  z-index: 7000;
+}
+
+#watching-tv {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/president-speech.jpg");
+  background-size: 100% 100%;
+}
+.invader-president {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-image: url("../../assets/images/various/space-invader-green.png");
+  background-size: 100% 100%;
+  top: 71px;
+  left: 295px;
+}
+.goToBottom {
+  height:200px;
+}
+.subtitles {
+  background-color: rgba(80,80,80,0.7);
+  width: 100%;
+  height: 100px;
+  bottom: 20px;
+  position: absolute;
+  letter-spacing: 20px;
+  color: white;
+  font-size: 80px;
+  overflow: hidden;
+  z-index: 100;
+}
+.subtitles-inner {
+  padding-left: 700px;
+  width: max-content;
+  overflow: hidden;
+  position: absolute;
+}
+.hide-left, .hide-right {
+  height: 100px;
+  bottom: 20px;
+  background-color: black;
+  position: absolute;
+  z-index: 5000;
+}
+
+
+.tv-channel {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+<div class="clock-digital-bg">
+  <div class="clock-digital">
+    <div class="clock-digital-inner">
+      <span *ngFor="let el of timer.split('')">
+        <span *ngIf="inInvaderLetter(el)">
+          <img src="assets/images/invaders/spaceInvaders-{{el.toLowerCase()}}.png"/>
+        </span>
+        <span class="letter" *ngIf="!inInvaderLetter(el)">{{el}}</span>
+      </span>
+    </div>
+  </div>
+  <a [routerLink]="['/livingroom2']"> <div class="goToBottom"></div></a>
+</div>

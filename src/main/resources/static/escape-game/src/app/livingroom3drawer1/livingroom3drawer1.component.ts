@@ -21,10 +21,10 @@ export class Livingroom3drawer1Component implements OnInit {
 
 
   addCarrot() {
-    this.gameService.addItem(AppConstants.CARROTS);
+    this.gameService.addTrophy(AppConstants.CARROTS);
   }
 
   hasCarrotBeenTaken() {
-    return this.gameService.hasItemBeenTaken(AppConstants.CARROTS);
+    return this.gameService.hasTrophy(AppConstants.CARROTS);
   }
 }

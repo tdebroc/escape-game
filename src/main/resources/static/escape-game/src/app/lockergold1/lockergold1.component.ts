@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PhoneService } from "../service/phone.service";
 import { GameService } from "../service/game.service";
 import { AppConstants } from "../app.constants";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lockergold1',
@@ -11,7 +12,8 @@ import { AppConstants } from "../app.constants";
 export class Lockergold1Component implements OnInit {
   code = "0000";
   constructor(private phoneService : PhoneService,
-              private gameService : GameService) { }
+              private gameService : GameService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +32,9 @@ export class Lockergold1Component implements OnInit {
   validate() {
     if (parseInt(this.code) === this.phoneService.getSumOfScores()) {
       this.gameService.usedItems[AppConstants.LOCKER_GOLD_OPENED] = true;
+      this.gameService.useItem(AppConstants.PHONE_ITEM);
+      this.gameService.playSound("Chest-Creak.wav");
+      this.router.navigate(["/inside-chest-gold"]);
     }
   }
   isLockerOpened() {

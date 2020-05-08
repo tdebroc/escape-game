@@ -1,0 +1,6 @@
+<div *ngFor="let trophy of getTrophies() | keyvalue">
+  <div class="trophy-container" [class.selectedTrophy]="isTrophySelected(trophy.key)"
+       (click)="selectTrophy(trophy.key)">
+    <img src="assets/images/trophies/{{trophy.key}}.png" class="image-trophy"/>
+  </div>
+</div>

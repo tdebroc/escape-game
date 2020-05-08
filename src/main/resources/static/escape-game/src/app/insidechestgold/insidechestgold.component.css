@@ -1,0 +1,19 @@
+.inside-chest {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/inside-chest.jpg");
+  background-size: 100% 100%;
+}
+.screwdriver {
+  position: absolute;
+  height: 100px;
+  left: 400px;
+  top: 400px;
+}
+.heart {
+  position: absolute;
+  height: 100px;
+  left: 630px;
+  top: 500px;
+}

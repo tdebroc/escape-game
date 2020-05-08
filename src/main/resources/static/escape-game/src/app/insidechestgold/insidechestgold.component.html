@@ -1,0 +1,6 @@
+<div class="inside-chest">
+  <img class="screwdriver" src="assets/images/items/screwdriver.png" (click)="getScrewDriver()" *ngIf="!hasScrewDriverBeenTaken()"/>
+  <img class="heart" src="../../assets/images/trophies/heart.png" (click)="addHeart()" *ngIf="!hasHeartBeenTaken()"/>
+  <a [routerLink]="['/livingroom4']"><div class="goToBottom"></div></a>
+</div>
+

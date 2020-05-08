@@ -1,0 +1,21 @@
+<div class="fullbg inside-wood-cupboard-left">
+  <div class="safe-padnum-lock" *ngIf="!isSafeOpened()">
+    <div (click)="openSafe()" class="handle-safe pointer"></div>
+    <div class="padnum-container">
+      <table>
+        <tr *ngFor="let line of [1,2,3,4]">
+          <td *ngFor="let col of [1,2,3]" class="padnum-cell pointer"
+            (click)="clickCell(line, col)">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="safe-opened" *ngIf="isSafeOpened()">
+    <img src="../../assets/images/trophies/syringe-invader.png" class="pointer"
+         (click)="takeSyringue()" *ngIf="!isSyringueTaken()"/>
+    <img src="assets/images/items/space-invader-laser.png" class="pointer"
+         (click)="takeLaser()" *ngIf="!isLaserTaken()"/>
+  </div>
+  <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>
+</div>

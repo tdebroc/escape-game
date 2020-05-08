@@ -14,6 +14,7 @@ export class PhoneInvadersComponent implements OnInit {
   }
 
   getTotalPoint() {
+    if (this.phoneService.getTotalPoint() == 0) return "0000";
     return this.phoneService.getTotalPoint();
   }
 

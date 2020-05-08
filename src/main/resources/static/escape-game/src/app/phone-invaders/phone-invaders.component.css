@@ -23,7 +23,14 @@
   position: absolute;
 }
 .total-score {
+  position: absolute;
   font-size: 30px;
+  top: 274px;
+  left: 161px;
+  z-index: 100;
+}
+.totalScoreSuperiorTo0 {
+  top: 230px;
 }
 
 .snapped-invader-list-container {

@@ -1,0 +1,59 @@
+.macbook-bg {
+  background-image: url("images/macbook-bg.jpg");
+}
+
+.bandaid-invader {
+  height: 200px;
+  left: 360px;
+  top: 209px;
+  position: absolute;
+  transform: rotate(101deg);
+  z-index: 2000;
+}
+.space-invader-game-icon {
+  background-image: url("images/space-invader-icon.png");
+  height: 75px;
+  width: 75px;
+  background-size: 100% 100%;
+  left: 395px;
+  top: 269px;
+  position: absolute;
+  z-index: 1000;
+}
+.top-secret {
+  background-image: url("images/top-secret.png");
+  height: 160px;
+  width: 200px;
+  background-size: 100% 100%;
+  top: 70px;
+  left: 50px;
+  position: absolute;
+}
+.lock {
+  background-image: url("images/lock.png");
+  height: 160px;
+  width: 160px;
+  background-size: 100% 100%;
+  top: 50px;
+  left: 160px;
+  position: absolute;
+  z-index:  5000;
+}
+.top-secret-post-it {
+  background-image: url("images/post-it.png");
+  height: 160px;
+  width: 160px;
+  background-size: 100% 100%;
+  top: 100px;
+  left: 80px;
+  position: absolute;
+}
+.inner-post-it {
+  left: 50px;
+  position: absolute;
+  top: 66px;
+  transform: rotate(-32deg);
+  font-family: fantasy;
+  letter-spacing: 3px;
+  font-size: 24px;
+}

@@ -1,7 +1,31 @@
 <div id="livingroom1-root">
+  <!-- Decor -->
   <a [routerLink]="['/livingroom4']"><div class="goToLeft"></div></a>
   <a [routerLink]="['/livingroom2']"><div class="goToRight"></div></a>
+  <a [routerLink]="['/under-sofa-right']"><div class="under-sofa-right"></div></a>
   <div class="door"></div>
-  <div class="space-invaders" ></div>
-  <div class="livingroom1-drawer2" (click)="openDrawer2()"></div>
+
+  <!-- Basic -->
+  <div class="space-invaders" *ngIf="!isLaserGameOn()"></div>
+  <div class="key-lock"></div>
+  <div class="livingroom1-drawer2 pointer" (click)="openDrawer2()"></div>
+
+  <!-- Space Invader Game-->
+  <div id="space-invader-laser"  (click)="shootLaser()"  *ngIf="isLaserSelected()"></div>
+  <div *ngFor="let bullet of bullets" class="bullet"
+       [ngStyle]="{'top.px': bullet.y, 'left.px' : bullet.x + BULLET_OFFSET_LEFT }"></div>
+  <div class="painting-white-bg" *ngIf="isLaserGameOn()">
+    <div>
+      <img *ngFor="let invader of getInvaders()" class="invader"
+           [ngStyle]="{'top.px': invader.y, 'left.px' : invader.x,
+                       'width.px' : invader.width, 'height.px' : invader.height  }"
+           src="assets/images/invaders/spaceInvaders-{{invader.letter.toLowerCase()}}.png">
+    </div>
+  </div>
+  <div class="cat-fear" *ngIf="isLaserGameOn()"></div>
+
+
+  <!-- Space Invader Game WON -->
+  <div id="painting-bg" *ngIf="isLaserGameWon()"></div>
+
 </div>

@@ -1,0 +1,15 @@
+<div class="fullbg macbook-bg">
+  <div class="space-invader-game-icon pointer"
+      (click)="goToSpaceInvaderGame()"></div>
+  <img src="assets/images/trophies/bandaid-invader.png"
+       (click)="getBandAid()" *ngIf="!isBandAidTaken()"
+      class="bandaid-invader pointer"/>
+  <div class="top-secret pointer" (click)="openToSecret()"></div>
+  <div class="top-secret-post-it" *ngIf="showPostIt">
+    <div class="inner-post-it">
+      {{getTopSecretCode()}}
+    </div>
+  </div>
+  <div class="lock" *ngIf="!isTopSecretOpen()"></div>
+  <a [routerLink]="['/livingroom4']"><div class="goToBottom"></div></a>
+</div>
