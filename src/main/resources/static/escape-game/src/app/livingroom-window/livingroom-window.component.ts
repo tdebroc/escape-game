@@ -26,9 +26,10 @@ export class LivingroomWindowComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.windowId = params.get('windowId');
     });
+
     $(".livingroom-window-root").on('mousemove', function(e){
       $('.phone-for-picture').css({
-        left:  e.pageX - 225,
+        left:  e.pageX - $(".livingroom-window-root").offset().left - 35,
         top:   e.pageY - 100
       });
     });

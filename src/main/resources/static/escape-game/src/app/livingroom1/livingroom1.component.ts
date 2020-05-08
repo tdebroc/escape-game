@@ -24,12 +24,25 @@ export class Livingroom1Component implements OnInit {
   bullets: Bullet[] = [];
   currentX = 0;
   currentY = 0;
-  X_LASER_OFFSET = 224;
   Y_LASER_OFFSET = 100;
   BULLET_OFFSET_LEFT = 35;
+  trophyOnPainting = [
+    { x : 120 , y : 46, height: 64, width : 32, name : AppConstants.NURSE_INVADER },
+    { x : 50 , y : 0, height: 70, width : 70, name : AppConstants.INFIRMARY_INVADER },
+    { x : 120 , y : 0, height: 46, width : 32, name : AppConstants.BANDAID_INVADER },
+    { x : 0 , y : 0, height: 50, width : 50, name : AppConstants.SYRINGE_INVADER },
+    { x : 90 , y : 70, height: 40, width : 30, name : AppConstants.HEART },
+    { x : 50 , y : 70, height: 40, width : 40, name : AppConstants.CARROTS },
+    { x : 0 , y : 50, height: 60, width : 50, name : AppConstants.RABBIT },
+  ];
+
+  getLeftOffset() {
+    return this.rootEl.offset().left;
+  }
+
   constructor(private gameService : GameService,
               private router: Router) {
-    this.gameService.loadGame();
+
   }
 
   ngOnInit(): void {
@@ -54,7 +67,7 @@ export class Livingroom1Component implements OnInit {
       this.currentX = e.pageX;
       this.currentY = e.pageY;
       $('#space-invader-laser').css({
-        left:  e.pageX - this.X_LASER_OFFSET,
+        left:  e.pageX - this.getLeftOffset(),
         top:   e.pageY - this.Y_LASER_OFFSET
       });
     });
@@ -64,10 +77,10 @@ export class Livingroom1Component implements OnInit {
   }
 
   private makeExplosion() {
-    this.gameService.playSound("explosion.wav");
     if (!this.isLaserGameOn()) {
       return;
     }
+    this.gameService.playSound("explosion.wav");
     setTimeout(this.makeExplosion.bind(this),
       Math.random() * 6000 + 1000);
   }
@@ -77,17 +90,13 @@ export class Livingroom1Component implements OnInit {
   }
 
   shootLaser() {
-    console.log("Shoot")
-    let audio = new Audio();
-    audio.src = "assets/sounds/shoot.wav";
-    audio.load();
-    audio.play();
+    this.gameService.playSound("shoot.wav");
     this.throwBullet();
   }
 
 
   private throwBullet() {
-    let bullet = new Bullet(this.currentX - this.X_LASER_OFFSET, this.currentY - this.Y_LASER_OFFSET);
+    let bullet = new Bullet(this.currentX - this.getLeftOffset(), this.currentY - this.Y_LASER_OFFSET);
     this.bullets.push(bullet);
   }
 
@@ -121,10 +130,7 @@ export class Livingroom1Component implements OnInit {
 
   private killInvader(i: number) {
     this.invaders.splice(i, 1);
-    let audio = new Audio();
-    audio.src = "assets/sounds/fastinvader3.wav";
-    audio.load();
-    audio.play();
+    this.gameService.playSound("fastinvader3.wav");
     if (this.invaders.length == 0) {
       this.gameService.useItem(AppConstants.LASER)
     }
@@ -159,8 +165,58 @@ export class Livingroom1Component implements OnInit {
     }
   }
 
-
   isLaserGameWon() {
     return this.gameService.hasItemBeenUsed(AppConstants.LASER);
+  }
+
+  placeTrophy(trophyPaint) {
+    if (trophyPaint.name == this.gameService.getSelectTrophy()) {
+      this.gameService.trophies[trophyPaint.name].onPainting = true;
+      this.gameService.selectedTrophyName = undefined;
+      if (Object.keys(this.trophyOnPainting).length == this.countTrophiesOnPainting()) {
+        this.gameService.addToUsedItem(AppConstants.PAINTING_DONE, true);
+      }
+    }
+  }
+
+  countTrophiesOnPainting() {
+    let count = 0;
+    for (let trophy in this.gameService.trophies) {
+      if (this.gameService.trophies[trophy].onPainting) {
+        count ++;
+      }
+    }
+    return count;
+  }
+
+  isOnPainting(trophyName) {
+    return this.gameService.isTrophyOnPainting(trophyName);
+  }
+
+  getBgImage(trophyPaint) {
+    return this.isOnPainting(trophyPaint.name) ?
+      "url(assets/images/trophies/" + trophyPaint.name + ".png)" : "";
+  }
+
+  takeOldGoldKey() {
+    this.gameService.addItem(AppConstants.OLD_GOLD_KEY);
+  }
+
+  isOldKeyTaken() {
+    return this.gameService.hasItemBeenTaken(AppConstants.OLD_GOLD_KEY);
+  }
+
+  isPaintingFinished() {
+    return this.gameService.hasItemBeenUsed(AppConstants.PAINTING_DONE);
+  }
+
+  openDoor() {
+    if (this.gameService.isItemSelected(AppConstants.OLD_GOLD_KEY)) {
+      return this.gameService.useItem(AppConstants.OLD_GOLD_KEY);
+    }
+  }
+
+  hasGoldenKeyBeenUsed() {
+    return this.gameService.hasItemBeenUsed(AppConstants.OLD_GOLD_KEY);
   }
 }

@@ -34,6 +34,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UnderSofaRightComponent } from './under-sofa-right/under-sofa-right.component';
 import { InsideWoodCupboardLeftComponent } from './inside-wood-cupboard-left/inside-wood-cupboard-left.component';
 import { JukeboxComponent } from './jukebox/jukebox.component';
+import { DoorOpenedGameWonComponent } from './door-opened-game-won/door-opened-game-won.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { JukeboxComponent } from './jukebox/jukebox.component';
     InsideComputerLoginComponent,
     UnderSofaRightComponent,
     InsideWoodCupboardLeftComponent,
-    JukeboxComponent
+    JukeboxComponent,
+    DoorOpenedGameWonComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +96,7 @@ import { JukeboxComponent } from './jukebox/jukebox.component';
       {path: 'under-sofa-right', component: UnderSofaRightComponent},
       {path: 'inside-wood-cupboard-left', component: InsideWoodCupboardLeftComponent},
       {path: 'jukebox', component: JukeboxComponent},
+      {path: 'doorOpenedGameWon', component: DoorOpenedGameWonComponent},
       {path: '**', component: LandingpageComponent}
     ]),
     BrowserAnimationsModule,

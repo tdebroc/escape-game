@@ -1,6 +1,12 @@
 <div *ngFor="let trophy of getTrophies() | keyvalue">
   <div class="trophy-container" [class.selectedTrophy]="isTrophySelected(trophy.key)"
-       (click)="selectTrophy(trophy.key)">
+       (click)="selectTrophy(trophy.key)"
+        *ngIf="!isOnPainting(trophy.key)">
     <img src="assets/images/trophies/{{trophy.key}}.png" class="image-trophy"/>
   </div>
+</div>
+<div *ngIf="getSelectedTrophy()">
+  <img src="assets/images/trophies/{{getSelectedTrophy()}}.png"
+       [ngStyle]="{'top.px': trophyY, 'left.px' : trophyX}"
+       class="trophy-to-place"/>
 </div>

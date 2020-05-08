@@ -3,7 +3,8 @@
   <a [routerLink]="['/livingroom4']"><div class="goToLeft"></div></a>
   <a [routerLink]="['/livingroom2']"><div class="goToRight"></div></a>
   <a [routerLink]="['/under-sofa-right']"><div class="under-sofa-right"></div></a>
-  <div class="door"></div>
+  <div class="door door-closed"></div>
+
 
   <!-- Basic -->
   <div class="space-invaders" *ngIf="!isLaserGameOn()"></div>
@@ -26,6 +27,51 @@
 
 
   <!-- Space Invader Game WON -->
-  <div id="painting-bg" *ngIf="isLaserGameWon()"></div>
+  <div id="painting-bg" *ngIf="isLaserGameWon()">
+    <div *ngFor="let trophyPaint of trophyOnPainting" class="trophy-on-painting"
+         [ngStyle]="{'top.px': trophyPaint.y, 'left.px' : trophyPaint.x,
+                     'width.px': trophyPaint.width, 'height.px' : trophyPaint.height,
+                     'background-image' : getBgImage(trophyPaint),
+                     'background-color' : isOnPainting(trophyPaint.name) ? 'white' : ''
+                     }"
+
+         (click)="placeTrophy(trophyPaint)">
+
+    </div>
+  </div>
+  <div class="old-gold-key pointer" (click)="takeOldGoldKey()"
+       *ngIf="isPaintingFinished() && !isOldKeyTaken()"></div>
+  <div class="sun" *ngIf="isPaintingFinished()">
+    <div class="ray_box">
+      <div class="ray ray1"></div>
+      <div class="ray ray2"></div>
+      <div class="ray ray3"></div>
+      <div class="ray ray4"></div>
+      <div class="ray ray5"></div>
+      <div class="ray ray6"></div>
+      <div class="ray ray7"></div>
+      <div class="ray ray8"></div>
+      <div class="ray ray9"></div>
+      <div class="ray ray10"></div>
+    </div>
+  </div>
+
+  <div class="doorKnob pointer" (click)="openDoor()"></div>
+  <div class="door door-opened pointer" *ngIf="hasGoldenKeyBeenUsed()"
+       [routerLink]="['/doorOpenedGameWon']"></div>
+  <div class="sun2" *ngIf="hasGoldenKeyBeenUsed()" >
+    <div class="ray_box">
+      <div class="ray ray1"></div>
+      <div class="ray ray2"></div>
+      <div class="ray ray3"></div>
+      <div class="ray ray4"></div>
+      <div class="ray ray5"></div>
+      <div class="ray ray6"></div>
+      <div class="ray ray7"></div>
+      <div class="ray ray8"></div>
+      <div class="ray ray9"></div>
+      <div class="ray ray10"></div>
+    </div>
+  </div>
 
 </div>

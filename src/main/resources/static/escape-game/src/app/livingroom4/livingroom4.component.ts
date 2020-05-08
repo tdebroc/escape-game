@@ -32,4 +32,12 @@ export class Livingroom4Component implements OnInit {
       this.router.navigate(["/inside-computer-login"]);
     }
   }
+
+  shouldShowRabbit() {
+    return !this.gameService.trophies[AppConstants.RABBIT];
+  }
+
+  takeRabbit() {
+    this.gameService.addTrophy(AppConstants.RABBIT);
+  }
 }

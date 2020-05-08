@@ -36,6 +36,11 @@ body {
   src: url("assets/fonts/AtariSmall.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "OvertheRainbow";
+  src: url("assets/fonts/OvertheRainbow-Regular.ttf") format("truetype");
+}
+
 /******************************************************
   Trophies
  ******************************************************/

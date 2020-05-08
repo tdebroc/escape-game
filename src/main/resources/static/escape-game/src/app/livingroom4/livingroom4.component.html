@@ -8,6 +8,10 @@
   <a [routerLink]="['/livingroom-window/4']"><div class="window window4" ><div class="window-container"><div class="window-background"></div><div class="backWindow"></div></div></div></a>
   <a [routerLink]="['/livingroom-window/5']"><div class="window window5" ><div class="window-container"><div class="window-background"></div><div class="backWindow"></div></div></div></a>
   <div class="desk"></div>
+
+  <img src="assets/images/trophies/rabbit.png" class="rabbit pointer"
+      *ngIf="shouldShowRabbit()" (click)="takeRabbit()"/>
+
   <a (click)="goInsideComputer()">
     <div class="macbook pointer"></div>
   </a>

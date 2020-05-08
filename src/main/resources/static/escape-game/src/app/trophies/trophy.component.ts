@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {GameService} from "../service/game.service";
 import {AppConstants} from "../app.constants";
+import * as $ from "jquery";
+
 
 @Component({
   selector: 'app-trophy',
@@ -8,9 +10,10 @@ import {AppConstants} from "../app.constants";
   styleUrls: ['./trophy.component.css']
 })
 export class TrophyComponent implements OnInit {
-  trophySelected;
+  trophyY;
+  trophyX;
 
-  constructor(private gameService : GameService) { }
+  constructor(public gameService : GameService) { }
 
   ngOnInit(): void {
   }
@@ -19,14 +22,32 @@ export class TrophyComponent implements OnInit {
     return this.gameService.trophies;
   }
 
+  getSelectedTrophy() {
+    return this.gameService.getSelectTrophy();
+  }
+
   isTrophySelected(name) {
-    return this.trophySelected == name;
+    return this.getSelectedTrophy() == name;
   }
 
   selectTrophy(key: string) {
     if (!this.gameService.hasItemBeenUsed(AppConstants.LASER)) {
       return;
     }
-    this.trophySelected = key;
+    if (key == this.getSelectedTrophy()) {
+      this.gameService.selectedTrophyName = undefined;
+    } else {
+      this.gameService.selectedTrophyName = key;
+    }
+  }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e) {
+    this.trophyX = e.pageX - $("#livingroom1-root").offset().left + 70;
+    this.trophyY = e.pageY - 80;
+  }
+
+  isOnPainting(key: string) {
+    return this.gameService.isTrophyOnPainting(key);
   }
 }

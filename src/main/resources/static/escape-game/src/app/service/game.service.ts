@@ -8,13 +8,14 @@ export class GameService {
   usedItems = {};
   trophies = {};
   selectedItemName;
+  selectedTrophyName;
   // Hello Hacker friend, this is top Secret "encryption" ;-)
   stc = "SSBBTSBKVVBJVEVS";
   topSecret = "NzM0NUI=";
   theJukebokMusic = "It's a small World";
 
   constructor() {
-    this.loadGame();
+
   }
 
   addTrophy(name) {
@@ -64,6 +65,14 @@ export class GameService {
 
   isInCurrentItem(item: string) {
     return this.currentItems[item];
+  }
+
+  getSelectTrophy() {
+    return this.selectedTrophyName;
+  }
+
+  isTrophyOnPainting(trophyName) {
+    return this.trophies[trophyName] && this.trophies[trophyName].onPainting;
   }
 
   // ************************
