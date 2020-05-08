@@ -3,6 +3,11 @@
  * MIT Licensed.
  */
 // Inspired by base2 and Prototype
+let audio = new Audio();
+audio.src = "assets/sounds/music/player-1-space-invaders-single-1979.mp3";
+audio.load();
+audio.play();
+
 let POINT_TO_BEAT = window.location.hostname === "localhost" ? 50 : 2750;
 (function(){
   var initializing = false, fnTest = /xyz/.test(function(){}) ? /\b_super\b/ : /.*/;
