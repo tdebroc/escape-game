@@ -1,0 +1,10 @@
+<div id="gameWonLandscape" class="fullbg">
+  <div class="won-message">Happy Birthday !</div>
+
+  <div *ngFor="let trophyPaint of trophies" class="trophy"
+       [ngStyle]="{'top.px': trophyPaint.y, 'left.px' : trophyPaint.x,
+                     'width.px': trophyPaint.width, 'height.px' : trophyPaint.height,
+                     'background-image' : 'url(assets/images/trophies/' + trophyPaint.name + '.png)'
+                     }">
+  </div>
+</div>
