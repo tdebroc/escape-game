@@ -25,7 +25,16 @@
   width: 226px;
   background-image: url("images/soucoupe-et-perroquet.jpg");
   background-size: 100% 100%;
-  z-index: 200;
+  z-index: 5000;
+  left: 356px;
+  bottom: 297px;
+}
+
+.openTV {
+  position: absolute;
+  height: 107px;
+  width: 226px;
+  z-index: 6000;
   left: 356px;
   bottom: 297px;
 }

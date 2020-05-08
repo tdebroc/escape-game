@@ -8,7 +8,9 @@
   <a [routerLink]="['/emptydrawer']"><div class="drawer2"></div></a>
   <a [routerLink]="['/emptydrawer']"><div class="drawer3"></div></a>
   <a [routerLink]="['/clock-digital']"><div class="clock-digital"></div></a>
-  <div class="leftDoorCupboard pointer" (click)="openWoodPlank()"></div>
+
+
   <div class="wood-plank pointer" (click)="openWoodPlank()"
       *ngIf="!hasWoodPlankBeenOpened()"></div>
+  <div class="leftDoorCupboard pointer" (click)="openWoodPlank()"></div>
 </div>

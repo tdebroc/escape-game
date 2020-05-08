@@ -1,8 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { GameService } from '../service/game.service';
-import { AppConstants } from "../app.constants";
+import {Component, OnInit, HostListener} from '@angular/core';
+import {GameService} from '../service/game.service';
+import {AppConstants} from "../app.constants";
 import {Location} from '@angular/common';
 import {ActivatedRoute, Router} from "@angular/router";
+import * as $ from "jquery";
+
+export class ItemToHold {
+  name: String;
+  rootEl: String;
+  location: String;
+  x: number;
+  y: number;
+}
 
 @Component({
   selector: 'app-items',
@@ -10,10 +19,38 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  constructor(private gameService : GameService,
+  currentItemToHold: ItemToHold;
+  itemsToHold: ItemToHold[] = [
+    {
+      name: AppConstants.KEY_DRAWER1,
+      location: "/livingroom1",
+      rootEl: "#livingroom1-root",
+      x: 0,
+      y: 0,
+    },
+    {
+      name: AppConstants.REMOTE,
+      location: "/livingroom3",
+      rootEl: "#livingroom3-root",
+      x: 0,
+      y: 0,
+    },
+    {
+      name: AppConstants.SCREWDRIVER,
+      location: "/livingroom2",
+      rootEl: "#livingroom2-root",
+      x: 0,
+      y: 0,
+    }
+  ];
+  public hasItemToHold: boolean = false;
+
+  constructor(private gameService: GameService,
               private router: Router,
               private route: ActivatedRoute,
-              private _location: Location,) { }
+              private _location: Location,) {
+  }
+
 
   ngOnInit(): void {
   }
@@ -21,15 +58,19 @@ export class ItemsComponent implements OnInit {
   getItems() {
     return this.gameService.getCurrentItems();
   }
+
   selectItem(name) {
     this.gameService.selectItem(name);
   }
+
   isItemSelected(name) {
     return this.gameService.isItemSelected(name);
   }
+
   saveGame() {
     this.gameService.saveGame();
   }
+
   loadGame() {
     this.gameService.loadGame();
   }
@@ -44,5 +85,27 @@ export class ItemsComponent implements OnInit {
     } else {
       this.router.navigate([this.getItems()[key].zoomUrl]);
     }
+  }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e) {
+    let itemToHold = false;
+    for (let i = 0; i < this.itemsToHold.length; i++) {
+      let currentItem = this.itemsToHold[i];
+      if (this.isItemSelected(currentItem.name) &&
+          this.router.url == currentItem.location) {
+        itemToHold = true;
+        this.holdItem(currentItem, e);
+      }
+    }
+    this.hasItemToHold = itemToHold;
+  }
+
+  private holdItem(itemsToHold, e: any) {
+    let rootEl = $(itemsToHold.rootEl);
+    this.currentItemToHold = itemsToHold;
+    this.currentItemToHold.x = e.pageX - rootEl.offset().left - rootEl.width() - 25;
+    this.currentItemToHold.y = e.pageY - 80;
+    console.log(this.currentItemToHold)
   }
 }

@@ -43,8 +43,9 @@ export class TrophyComponent implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e) {
-    if ($("#livingroom1-root")) {
-      this.trophyX = e.pageX - $("#livingroom1-root").offset().left + 70;
+    let rootEl = $("#livingroom1-root");
+    if (rootEl.offset()) {
+      this.trophyX = e.pageX - rootEl.offset().left + 70;
       this.trophyY = e.pageY - 80;
     }
   }

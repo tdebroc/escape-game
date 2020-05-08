@@ -4,7 +4,6 @@
 
   <a [routerLink]="['/livingroom2']"><div class="goToLeft"></div></a>
   <a [routerLink]="['/livingroom4']"><div class="goToRight"></div></a>
-  <a [routerLink]="['/livingroom3drawer1']"><div class="open-drawer1"></div></a>
 
   <a [routerLink]="['/livingroom-window/0']"><div class="window window0" ><div class="window-container"><div class="window-background"></div><div class="backWindow"></div></div></div></a>
   <a [routerLink]="['/livingroom-window/6']"><div class="window window6" ><div class="window-container"><div class="window-background"></div><div class="backWindow"></div></div></div></a>
@@ -12,8 +11,11 @@
 
   <a [routerLink]="['/jukebox']"><div class="jukebox"></div></a>
 
-  <div class="tv-desk pointer" (click)="openTv()"></div>
+  <a [routerLink]="['/livingroom3drawer1']"><div class="open-drawer1"></div></a>
   <div [routerLink]="['/inside-wood-cupboard-left']" class="inside-wood-cupboard-left pointer"></div>
+
+  <div class="tv-desk pointer" (click)="openTv()"></div>
   <div class="soucoupe-et-perroquet pointer" (click)="openTv()"></div>
+  <div class="openTV pointer" (click)="openTv()"></div>
 
 </div>

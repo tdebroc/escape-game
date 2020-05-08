@@ -22,7 +22,7 @@
   position: absolute;
   height: 187px;
   width: 208px;
-  z-index: 100;
+  z-index: 6000;
   left: 187px;
   top: 319px;
 }

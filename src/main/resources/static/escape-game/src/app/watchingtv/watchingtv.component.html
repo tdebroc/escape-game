@@ -1,10 +1,16 @@
+<div class="switch-channel-container">
+  CHANNEL:<br/>
+  <div *ngFor="let channel of [1,2,3]"
+        class="channel-button pointer"
+        (click)="switchToChannel(channel)">{{channel}}</div>
+</div>
+
 <iframe class="tv-channel pointer" *ngIf="channel == 1"
         src="https://www.youtube.com/embed/BywJa6iaa-M?autoplay=1">
 </iframe>
 <iframe class="tv-channel pointer" *ngIf="channel == 2"
         src="https://www.youtube.com/embed/VczbbiRmDik?autoplay=0">
 </iframe>
-
 
 <div id="watching-tv" *ngIf="channel == 3">
   <div class="invader-president"></div>

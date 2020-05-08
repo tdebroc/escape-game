@@ -1,3 +1,9 @@
+<div *ngIf="hasItemToHold" class="currentItemToHold"
+     [ngStyle]="{'top.px': currentItemToHold.y,
+                 'left.px' : currentItemToHold.x,
+                 'background-image' : 'url(assets/images/items/' + currentItemToHold.name + '.png)'}"
+></div>
+
 <div class="button"Game (click)="saveGame()">
   <button mat-fab color="primary" aria-label="Save Game">
     <mat-icon>save</mat-icon>
@@ -17,3 +23,4 @@
     <img src="assets/images/items/{{item.key}}.png" class="image-item cursor"/>
   </div>
 </div>
+

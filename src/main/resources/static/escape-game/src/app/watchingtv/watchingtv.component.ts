@@ -32,11 +32,16 @@ export class WatchingtvComponent implements AfterViewInit {
     this.animateSubtitles();
   }
 
+  switchToChannel(channel: number) {
+    this.channel = channel;
+    this.widthCalculated = 0;
+  }
+
   switchChannel(add) {
     this.channel += add;
     if (this.channel == 4) this.channel = 1;
     if (this.channel == 0) this.channel = 3;
-    this.widthCalculated = 0;
+    this.switchToChannel(this.channel);
   }
 
   initSubtitles() {
@@ -57,7 +62,7 @@ export class WatchingtvComponent implements AfterViewInit {
       this.initSubtitles();
       subtitleInnerEl
         .css({"left":"0px"})
-        .animate({"left": - width}, width * 5, "linear");
+        .animate({"left": - width}, width * 10, "linear");
     }
 
   }
@@ -66,7 +71,7 @@ export class WatchingtvComponent implements AfterViewInit {
     this.div = $(".invader-president");
     this.leftInvaderPresident = parseInt(this.div.css("left"))
     this.topInvaderPresident = parseInt(this.div.css("top"))
-    //this.shake();
+    this.shake();
   }
 
   shake() {
@@ -100,6 +105,7 @@ export class WatchingtvComponent implements AfterViewInit {
   inInvaderLetter(el) {
     return this.gameService.inInvaderLetter(el);
   }
+
 
 
 }

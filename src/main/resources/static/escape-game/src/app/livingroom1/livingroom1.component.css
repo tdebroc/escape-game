@@ -46,7 +46,7 @@
   width: 61px;
   height: 19px;
   left: 218px;
-  z-index: 5000;
+  z-index: 6000;
 }
 
 .space-invaders {
@@ -64,6 +64,10 @@
   height: 100px;
   width: 250px;
   position: absolute;
+}
+
+.keyDrawer1 {
+
 }
 
 /******************/

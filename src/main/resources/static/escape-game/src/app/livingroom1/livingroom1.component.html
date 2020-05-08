@@ -4,10 +4,9 @@
   <a [routerLink]="['/livingroom2']"><div class="goToRight"></div></a>
   <a [routerLink]="['/under-sofa-right']"><div class="under-sofa-right"></div></a>
   <div class="door door-closed"></div>
-
-
-  <!-- Basic -->
   <div class="space-invaders" *ngIf="!isLaserGameOn()"></div>
+
+  <!-- Drawer -->
   <div class="key-lock"></div>
   <div class="livingroom1-drawer2 pointer" (click)="openDrawer2()"></div>
 
