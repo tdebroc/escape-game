@@ -82,4 +82,10 @@
   position: absolute;
   z-index: 1000;
 }
-
+.monsieur-chat {
+  position: absolute;
+  z-index: 5000;
+  top: 300px;
+  left: 590px;
+  height: 100px;
+}

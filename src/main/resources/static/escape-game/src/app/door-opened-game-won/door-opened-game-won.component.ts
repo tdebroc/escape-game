@@ -12,7 +12,7 @@ export class DoorOpenedGameWonComponent implements OnInit {
   constructor(private gameService : GameService) { }
 
   ngOnInit(): void {
-    this.gameService.playSound("mario-kart-wii-winner-sound.mp3");
+    this.gameService.playSound("mario-kart-tour-win.mp3");
   }
 
   trophies = [
