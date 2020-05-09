@@ -161,10 +161,14 @@ export class GameService {
   }
 
   resetGame() {
-    this.currentItems = {};
-    this.usedItems = {};
-    this.trophies = {};
-    this.saveGame();
+    let r = confirm("This will Reset all your Game. You'll lose all your items ! Are you sure you want to do this ?");
+    if (r == true) {
+      this.currentItems = {};
+      this.usedItems = {};
+      this.trophies = {};
+      this.saveGame();
+    }
+
   }
 
   private launchAutoSave() {
