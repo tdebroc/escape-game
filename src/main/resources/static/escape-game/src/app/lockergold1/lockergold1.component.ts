@@ -27,6 +27,7 @@ export class Lockergold1Component implements OnInit {
     let oldNum = parseInt(char);
     let newNum = oldNum == 9 ? 0 : (oldNum + 1);
     this.code = this.replaceAt(this.code, number, newNum);
+    this.validate();
   }
 
   validate() {

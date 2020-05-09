@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from "../service/game.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-clock-digital',
@@ -7,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockDigitalComponent implements OnInit {
   timer = "";
-  constructor() { this.changeTime(); }
+  constructor(private gameService : GameService,
+              private router : Router) {  }
 
   ngOnInit(): void {
-
+    this.changeTime();
   }
 
   inInvaderLetter(el: string) {
@@ -18,7 +21,14 @@ export class ClockDigitalComponent implements OnInit {
   }
 
   changeTime() {
-    this.timer = (new Date).toTimeString().substring(0,8);
+    let newDate = (new Date).toTimeString().substring(0,8);
+    if (newDate != this.timer) {
+      this.timer = newDate;
+      this.gameService.playSound("Tick.mp3");
+    }
+    if (this.router.url != "/clock-digital" ) {
+      return;
+    }
     setTimeout(()=>{
       this.changeTime()
     }, 50);

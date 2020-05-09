@@ -21,6 +21,7 @@ export class InsideComputerLoginComponent implements OnInit {
   }
 
   doLogin() {
+    this.gameService.playSound("sound-effect-computer-data.mp3");
     if (this.gameService.getStc().toUpperCase().replace("I AM ", "") == this.login.toUpperCase() &&
         this.password.toUpperCase() == "DECAF") {
       this.gameService.usedItems[AppConstants.COMPUTER_OPENED] = true;

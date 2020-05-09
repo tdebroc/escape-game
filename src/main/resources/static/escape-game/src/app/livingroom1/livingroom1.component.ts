@@ -175,6 +175,7 @@ export class Livingroom1Component implements OnInit {
       this.gameService.selectedTrophyName = undefined;
       if (Object.keys(this.trophyOnPainting).length == this.countTrophiesOnPainting()) {
         this.gameService.addToUsedItem(AppConstants.PAINTING_DONE, true);
+        this.gameService.playSound("heavenly-music-gaming-sound-effect-hd.mp3");
       }
     }
   }
