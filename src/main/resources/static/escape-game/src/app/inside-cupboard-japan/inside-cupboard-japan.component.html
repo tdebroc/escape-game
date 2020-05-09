@@ -1,1 +1,23 @@
-<p>inside-cupboard-japan works!</p>
+<div class="inside-wood-cupboard-right fullbg">
+
+  <div class="itembg itembg"></div>
+  <div class="itembg fan"></div>
+  <div class="itembg house"></div>
+  <div class="itembg monster"></div>
+  <div class="itembg rice"></div>
+  <div class="itembg tree"></div>
+  <div class="itembg sun"></div>
+  <div class="itembg sign"></div>
+  <div class="itembg mountain"></div>
+  <div class="itembg lamp"></div>
+  <div class="itembg cat-japan-statue"></div>
+  <div class="itembg cat-japan-statue-click-zone pointer" (click)="clickOnCatJapanStatue()"></div>
+
+  <img alt="sushis" src="assets/images/items/sushis.png" class="sushis"  *ngIf="shouldShowSushis()"/>
+
+  <img alt="rabbit" src="assets/images/trophies/rabbit.png" class="rabbit pointer"
+       *ngIf="shouldShowRabbit()" (click)="takeRabbit()"/>
+
+  <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>
+</div>
+

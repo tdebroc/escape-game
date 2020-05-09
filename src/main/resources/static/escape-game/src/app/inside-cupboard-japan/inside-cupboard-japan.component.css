@@ -1,0 +1,84 @@
+.inside-wood-cupboard-right {
+  background-image: url("images/inside-wood-cupboard-right.jpg");
+}
+
+.itembg {
+  background-size: 100% 100%;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+.fan {
+  background-image: url("images/fan.png");
+  top: 500px;
+  left: 550px;
+}
+.house {
+  background-image: url("images/house.png");
+  top: 340px;
+  left: 403px;
+}
+.monster {
+  background-image: url("images/monster.png");
+  top: 220px;
+  left: 400px;
+}
+.rice {
+  background-image: url("images/rice.png");
+  top: 500px;
+  left: 250px;
+}
+.lamp {
+  background-image: url("images/lamp.png");
+  left: 400px;
+  top: 50px;
+}
+.sign {
+  background-image: url("images/sign.png");
+  top: 223px;
+  left: 200px;
+}
+.sun {
+  background-image: url("images/sun.png");
+  top: 230px;
+  left: 550px;
+}
+.tree {
+  background-image: url("images/tree.png");
+  top: 340px;
+  left: 563px;
+}
+.branch {
+  background-image: url("images/branch.png");
+}
+.mountain {
+  background-image: url("images/mountain.png");
+  top: 340px;
+  left: 200px;
+}
+.cat-japan-statue {
+  background-image: url("images/cat-japan-statue.png");
+  left: 350px;
+  top: 380px;
+  height: 200px;
+  width: 200px;
+}
+.cat-japan-statue-click-zone {
+  left: 350px;
+  top: 380px;
+  height: 200px;
+  width: 200px;
+  z-index: 6000;
+}
+.sushis {
+  top: 540px;
+  position: absolute;
+  left: 370px;
+}
+.rabbit {
+  top: 350px;
+  left: 50px;
+  height: 200px;
+  z-index: 5000;
+  position: absolute;
+}

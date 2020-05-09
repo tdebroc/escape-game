@@ -75,17 +75,17 @@
   left: 650px;
   top: 50px;
 }
-.rabbit {
-  height: 100px;
-  left: 120px;
-  top: 290px;
+.sushis {
+  height: 50px;
+  left: 140px;
+  top: 344px;
   position: absolute;
   z-index: 1000;
 }
 .monsieur-chat {
   position: absolute;
   z-index: 5000;
-  top: 300px;
+  top: 308px;
   left: 590px;
   height: 100px;
 }

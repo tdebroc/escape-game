@@ -8,6 +8,7 @@ export class AppConstants {
   public static GRIMOIRE = "grimoire";
   public static LASER = "space-invader-laser";
   public static OLD_GOLD_KEY = "old-golden-key";
+  public static SUSHIS = "sushis";
 
   /* States */
   public static LOCKER_GOLD_OPENED = "lockerGoldOpened";
@@ -24,6 +25,7 @@ export class AppConstants {
   public static BANDAID_INVADER = "bandaid-invader";
   public static SYRINGE_INVADER = "syringe-invader";
   public static RABBIT = "rabbit";
+
 
 
 

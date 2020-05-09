@@ -33,11 +33,11 @@ export class Livingroom4Component implements OnInit {
     }
   }
 
-  shouldShowRabbit() {
-    return !this.gameService.trophies[AppConstants.RABBIT];
+  shouldShowSushis() {
+    return !this.gameService.hasItemBeenTaken(AppConstants.SUSHIS);
   }
 
-  takeRabbit() {
-    this.gameService.addTrophy(AppConstants.RABBIT);
+  takeSushis() {
+    this.gameService.addItem(AppConstants.SUSHIS);
   }
 }

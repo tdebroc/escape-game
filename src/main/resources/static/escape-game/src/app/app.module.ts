@@ -101,6 +101,7 @@ import { InsideCupboardJapanComponent } from './inside-cupboard-japan/inside-cup
       {path: 'inside-wood-cupboard-left', component: InsideWoodCupboardLeftComponent},
       {path: 'jukebox', component: JukeboxComponent},
       {path: 'doorOpenedGameWon', component: DoorOpenedGameWonComponent},
+      {path: 'japan-expo', component: InsideCupboardJapanComponent},
       {path: '**', component: LandingpageComponent}
     ]),
     BrowserAnimationsModule,

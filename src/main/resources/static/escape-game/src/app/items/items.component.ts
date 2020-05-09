@@ -20,6 +20,11 @@ export class ItemToHold {
 })
 export class ItemsComponent implements OnInit {
   currentItemToHold: ItemToHold;
+  pageCloseable = [
+    '/emptydrawer', '/livingroom3drawer1', '/livingroom1drawerPurple',
+    '/phone-invaders', '/inside-cupboard-left-inner',
+    '/watching-tv', "/read-grimoire", '/inside-wood-cupboard-left', '/japan-expo'
+  ]
   itemsToHold: ItemToHold[] = [
     {
       name: AppConstants.KEY_DRAWER1,
@@ -39,6 +44,13 @@ export class ItemsComponent implements OnInit {
       name: AppConstants.SCREWDRIVER,
       location: "/livingroom2",
       rootEl: "#livingroom2-root",
+      x: 0,
+      y: 0,
+    },
+    {
+      name: AppConstants.SUSHIS,
+      location: "/japan-expo",
+      rootEl: ".inside-wood-cupboard-right",
       x: 0,
       y: 0,
     }
@@ -111,5 +123,13 @@ export class ItemsComponent implements OnInit {
 
   resetGame() {
     this.gameService.resetGame();
+  }
+
+  closePage() {
+    this._location.back();
+  }
+
+  showClosePage() {
+    return this.pageCloseable.indexOf(this.router.url) > -1;
   }
 }

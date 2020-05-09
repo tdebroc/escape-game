@@ -48,6 +48,7 @@
   position: absolute;
 }
 
+
 .window0 {
   left: 100px;
   top: 50px;
@@ -65,6 +66,15 @@
 
 .inside-wood-cupboard-left {
   left: 181px;
+  height: 100px;
+  position: absolute;
+  top: 400px;
+  width: 190px;
+  z-index: 200;
+}
+
+.inside-wood-cupboard-right {
+  left: 568px;
   height: 100px;
   position: absolute;
   top: 400px;
