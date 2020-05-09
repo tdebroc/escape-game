@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('startText') startTextEl;
 
   constructor(private gameService : GameService) {
-    this.gameService.resetGame();
+    this.gameService.resetGame(true);
   }
 
   ngOnInit(): void {

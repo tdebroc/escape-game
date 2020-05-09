@@ -160,9 +160,11 @@ export class GameService {
     }
   }
 
-  resetGame() {
-    let r = confirm("This will Reset all your Game. You'll lose all your items ! Are you sure you want to do this ?");
-    if (r == true) {
+  resetGame(force?) {
+    if (!force) {
+      force = confirm("This will Reset all your Game. You'll lose all your items ! Are you sure you want to do this ?");
+    }
+    if (force)  {
       this.currentItems = {};
       this.usedItems = {};
       this.trophies = {};
