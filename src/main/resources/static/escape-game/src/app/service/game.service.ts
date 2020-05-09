@@ -104,7 +104,9 @@ export class GameService {
 
   loadGame() {
     let game = localStorage.getItem(this.localStorageKey);
-    this.loadData(game);
+    if (game) {
+      this.loadData(game);
+    }
   }
 
   saveGame() {

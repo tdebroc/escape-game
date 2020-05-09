@@ -5,7 +5,7 @@
     <img src="assets/images/trophies/{{trophy.key}}.png" class="image-trophy"/>
   </div>
 </div>
-<div *ngIf="getSelectedTrophy()">
+<div *ngIf="getSelectedTrophy() && isOnLivingRoom1Page()">
   <img src="assets/images/trophies/{{getSelectedTrophy()}}.png"
        [ngStyle]="{'top.px': trophyY, 'left.px' : trophyX}"
        class="trophy-to-place"/>

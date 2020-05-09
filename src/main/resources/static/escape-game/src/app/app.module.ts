@@ -36,6 +36,7 @@ import { UnderSofaRightComponent } from './under-sofa-right/under-sofa-right.com
 import { InsideWoodCupboardLeftComponent } from './inside-wood-cupboard-left/inside-wood-cupboard-left.component';
 import { JukeboxComponent } from './jukebox/jukebox.component';
 import { DoorOpenedGameWonComponent } from './door-opened-game-won/door-opened-game-won.component';
+import { InsideCupboardJapanComponent } from './inside-cupboard-japan/inside-cupboard-japan.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { DoorOpenedGameWonComponent } from './door-opened-game-won/door-opened-g
     UnderSofaRightComponent,
     InsideWoodCupboardLeftComponent,
     JukeboxComponent,
-    DoorOpenedGameWonComponent
+    DoorOpenedGameWonComponent,
+    InsideCupboardJapanComponent
   ],
   imports: [
     BrowserModule,

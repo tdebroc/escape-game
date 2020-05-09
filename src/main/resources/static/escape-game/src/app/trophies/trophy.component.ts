@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import {GameService} from "../service/game.service";
 import {AppConstants} from "../app.constants";
 import * as $ from "jquery";
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-trophy',
@@ -13,7 +13,8 @@ export class TrophyComponent implements OnInit {
   trophyY;
   trophyX;
 
-  constructor(public gameService : GameService) { }
+  constructor(public gameService : GameService,
+              private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -22,12 +23,16 @@ export class TrophyComponent implements OnInit {
     return this.gameService.trophies;
   }
 
+
+  isOnLivingRoom1Page() {
+    return this.router.url == "/livingroom1";
+  }
   getSelectedTrophy() {
     return this.gameService.getSelectTrophy();
   }
 
   isTrophySelected(name) {
-    return this.getSelectedTrophy() == name;
+    return this.getSelectedTrophy() == name ;
   }
 
   selectTrophy(key: string) {
