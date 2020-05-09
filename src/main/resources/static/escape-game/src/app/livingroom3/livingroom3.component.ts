@@ -24,4 +24,8 @@ export class Livingroom3Component implements OnInit {
       this.router.navigate(['/watching-tv'])
     }
   }
+
+  clickOnCrackedWall() {
+    $(".cracked-wall-text").show();
+  }
 }

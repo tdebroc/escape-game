@@ -15,7 +15,8 @@ export class GameService {
   theJukebokMusic = "It's a small World";
 
   constructor() {
-
+    this.loadGame();
+    this.launchAutoSave();
   }
 
   addTrophy(name) {
@@ -155,5 +156,17 @@ export class GameService {
     if (this.currentMusic) {
       this.currentMusic.pause();
     }
+  }
+
+  resetGame() {
+    this.currentItems = {};
+    this.usedItems = {};
+    this.trophies = {};
+    this.saveGame();
+  }
+
+  private launchAutoSave() {
+    this.saveGame()
+    setTimeout(this.launchAutoSave.bind(this), 5000);
   }
 }

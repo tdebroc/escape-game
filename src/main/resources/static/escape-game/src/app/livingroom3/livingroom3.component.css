@@ -72,3 +72,26 @@
   z-index: 200;
 }
 
+.cracked-wall {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-image: url("images/cracked-wall.png");
+  background-size: 100% 100%;
+  z-index: 100;
+  left: 770px;
+  bottom: 190px;
+}
+.cracked-wall-text {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 6000;
+  left: 0;
+  top: -100px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.cracked-wall:hover .cracked-wall-text {
+  opacity: 1;
+}

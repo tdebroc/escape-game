@@ -4,14 +4,9 @@
                  'background-image' : 'url(assets/images/items/' + currentItemToHold.name + '.png)'}"
 ></div>
 
-<div class="button"Game (click)="saveGame()">
-  <button mat-fab color="primary" aria-label="Save Game">
-    <mat-icon>save</mat-icon>
-  </button>
-</div>
-<div class="button" (click)="loadGame()">
-  <button mat-fab color="primary" aria-label="Load Game">
-    <mat-icon>get_app</mat-icon>
+<div class="button" (click)="resetGame()" >
+  <button mat-fab color="primary" aria-label="Reset all Game"  matTooltip="Reset All Game" matTooltipPosition="before">
+    <mat-icon>restore_page</mat-icon>
   </button>
 </div>
 

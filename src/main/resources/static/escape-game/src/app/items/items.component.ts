@@ -108,4 +108,8 @@ export class ItemsComponent implements OnInit {
     this.currentItemToHold.y = e.pageY - 80;
     console.log(this.currentItemToHold)
   }
+
+  resetGame() {
+    this.gameService.resetGame();
+  }
 }

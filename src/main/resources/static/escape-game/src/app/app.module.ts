@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from "@angular/material/input";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -72,6 +73,7 @@ import { DoorOpenedGameWonComponent } from './door-opened-game-won/door-opened-g
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTooltipModule,
     RouterModule.forRoot([
       {path: '', component: LandingpageComponent},
       {path: 'livingroom1', component: Livingroom1Component},

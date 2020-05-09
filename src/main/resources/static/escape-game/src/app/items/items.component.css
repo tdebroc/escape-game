@@ -32,7 +32,9 @@
 }
 
 .button {
+  position: relative;
   display: inline-block;
+  z-index: 9500;
 }
 
 .magnifying-glass {
@@ -43,4 +45,9 @@
   right: 0;
   width: 40px;
   z-index: 100;
+}
+.my-tooltip {
+  position: relative;
+  color: red !important;
+  z-index: 9000 !important;
 }

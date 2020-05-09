@@ -10,7 +10,9 @@ import {GameService} from "../service/game.service";
 export class HomeComponent implements OnInit {
   @ViewChild('startText') startTextEl;
 
-  constructor(private gameService : GameService) { }
+  constructor(private gameService : GameService) {
+    this.gameService.resetGame();
+  }
 
   ngOnInit(): void {
 
