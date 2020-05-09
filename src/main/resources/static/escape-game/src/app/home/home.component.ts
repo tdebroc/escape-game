@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import Typewriter from 't-writer.js';
+import {GameService} from "../service/game.service";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import Typewriter from 't-writer.js';
 export class HomeComponent implements OnInit {
   @ViewChild('startText') startTextEl;
 
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
   ngOnInit(): void {
 
@@ -24,14 +25,11 @@ export class HomeComponent implements OnInit {
         .start();
     }, 1500)
 
-    let audio = new Audio();
-    audio.src = "assets/sounds/space-invaders-are-back.mp3";
-    audio.load();
-    audio.play();
+    this.gameService.playMusic("space-invaders-are-back.mp3");
   }
 
 
-
-
-
+  playStartSound() {
+    this.gameService.playSound("mario-kart-race-start-gaming-sound-effect-hd.mp3");
+  }
 }

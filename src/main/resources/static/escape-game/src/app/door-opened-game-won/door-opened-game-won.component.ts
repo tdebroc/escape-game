@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppConstants} from "../app.constants";
+import {GameService} from "../service/game.service";
 
 @Component({
   selector: 'app-door-opened-game-won',
@@ -8,9 +9,10 @@ import {AppConstants} from "../app.constants";
 })
 export class DoorOpenedGameWonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
   ngOnInit(): void {
+    this.gameService.playSound("mario-kart-wii-winner-sound.mp3");
   }
 
   trophies = [
