@@ -14,6 +14,13 @@
        class="invader-to-pick-block"
        (click)="snapInvader()"
   ></div>
+  <div class="backpacker" *ngIf="invadersToSnap[windowId].backpacker"
+       [style.left.px]="invadersToSnap[windowId].backpacker.x"
+       [style.top.px]="invadersToSnap[windowId].backpacker.y"
+       [style.width.px]="invadersToSnap[windowId].backpacker.width"
+       [style.height.px]="invadersToSnap[windowId].backpacker.height"
+  ></div>
+
   <div id="scoreToAdd">+ {{ invadersToSnap[windowId].score }}</div>
   <div id="picture-flash"></div>
   <div class="invader-text">

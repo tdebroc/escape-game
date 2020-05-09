@@ -7,21 +7,26 @@ import {GameService} from "./game.service";
 })
 export class PhoneService {
   invadersToSnap = [
-    {left : 372, top : 313, width : 41, height: 106, score : 642, legend : 'DUDE', song : "the-dude.mp3"},
-    {left : 545, top : 260, width : 59, height: 56, score : 799, legend : 'BEER', song : "beer-song.mp3"},
-    {left : 505, top : 330, width : 20, height: 20, score : 664, legend : 'PARIS', song : "edith-piaf-sous-le-ciel-de-paris.mp3"},
-    {left : 566, top : 280, width : 56, height: 68, score : 934, legend : 'MUSHROOM', song : "the-mushroom-song-original-song-by-eric-butler.mp3"},
-    {left : 259, top : 324, width : 256, height: 248, score : 442, legend : 'AtlAntic CoAst SurF', song : "the-beach-boys-surfer-girl.mp3"},
-    {left : 259, top : 284, width : 134, height: 159, score : 512, legend : "MOUNTAIN", song : "the-misty-mountains-cold-the-hobbit.mp3"},
-    {left : 330, top : 300, width : 200, height: 150, score : 230, legend : "XX'X A XXAXX XXXXX", song : "its-a-small-world-after.mp3"},
+    {left : 372, top : 313, width : 41, height: 106, score : 642, legend : 'DUDE', song : "the-dude.mp3",
+      backpacker : { x : 486, y : 273, width: 75, height : 150}},
+    {left : 545, top : 260, width : 59, height: 56, score : 799, legend : 'BEER', song : "beer-song.mp3",
+      backpacker : { x : 490, y : 463, width: 35, height : 75}},
+    {left : 505, top : 330, width : 20, height: 20, score : 664, legend : 'PARIS', song : "edith-piaf-sous-le-ciel-de-paris.mp3",
+      backpacker : { x : 266, y : 413, width: 50, height : 90}},
+    {left : 566, top : 280, width : 56, height: 68, score : 934, legend : 'MUSHROOM', song : "the-mushroom-song-original-song-by-eric-butler.mp3",
+      backpacker : { x : 286, y : 213, width: 25, height : 50}},
+    {left : 259, top : 324, width : 256, height: 248, score : 442, legend : 'AtlAntic CoAst SurF', song : "the-beach-boys-surfer-girl.mp3",
+      backpacker : { x : 194, y : 453, width: 50, height : 90}},
+    {left : 259, top : 284, width : 134, height: 159, score : 512, legend : "MOUNTAIN", song : "the-misty-mountains-cold-the-hobbit.mp3",
+      backpacker : { x : 549, y : 320, width: 25, height : 50}},
+    {left : 330, top : 300, width : 200, height: 150, score : 230, legend : "XX'X A XXAXX XXXXX", song : "its-a-small-world-after.mp3",
+      backpacker : { x : 563, y : 166, width: 9, height : 17}},
   ];
 
   constructor(private gameService : GameService) { }
-
   getInvadersToSnap() {
     return this.invadersToSnap;
   }
-
   getPhone() {
     return this.gameService.getCurrentItems()[AppConstants.PHONE_ITEM];
   }

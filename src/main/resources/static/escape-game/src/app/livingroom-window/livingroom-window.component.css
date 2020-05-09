@@ -80,3 +80,8 @@
   font-size: 48px;
   color: black;
 }
+.backpacker {
+  background-size: 100% 100%;
+  background-image: url("../../assets/images/various/backpacker.png");
+  position: absolute;
+}
