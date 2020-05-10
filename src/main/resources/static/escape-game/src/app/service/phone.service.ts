@@ -9,7 +9,7 @@ export class PhoneService {
   invadersToSnap = [
     {left : 372, top : 313, width : 41, height: 106, score : 642, legend : 'DUDE', song : "the-dude.mp3",
       backpacker : { x : 486, y : 273, width: 75, height : 150}},
-    {left : 545, top : 260, width : 59, height: 56, score : 799, legend : 'BEER', song : "beer-song.mp3",
+    {left : 545, top : 260, width : 59, height: 56, score : 569, legend : 'BEER', song : "beer-song.mp3",
       backpacker : { x : 490, y : 463, width: 35, height : 75}},
     {left : 505, top : 330, width : 20, height: 20, score : 664, legend : 'PARIS', song : "edith-piaf-sous-le-ciel-de-paris.mp3",
       backpacker : { x : 266, y : 413, width: 50, height : 90}},
@@ -21,6 +21,8 @@ export class PhoneService {
       backpacker : { x : 549, y : 320, width: 25, height : 50}},
     {left : 330, top : 300, width : 200, height: 150, score : 230, legend : "XX'X A XXAXX XXXXX", song : "its-a-small-world-after.mp3",
       backpacker : { x : 563, y : 166, width: 9, height : 17}},
+    {left : 390, top : 148, width : 50, height: 100, score : 230, legend : "CELINE DION", song : "celine-dion-jirai-ou-tu-iras.mp3",
+      backpacker : { x : 488, y : 356, width: 59, height : 157}}
   ];
 
   constructor(private gameService : GameService) { }
