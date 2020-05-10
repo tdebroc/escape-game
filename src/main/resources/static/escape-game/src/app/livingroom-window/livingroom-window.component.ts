@@ -33,7 +33,7 @@ export class LivingroomWindowComponent implements OnInit {
         top:   e.pageY - 100
       });
     });
-    this.playSong();
+    this.gameService.playMusic(this.getCurrentInvader().song);
   }
 
   backClicked() {
@@ -81,6 +81,6 @@ export class LivingroomWindowComponent implements OnInit {
   }
 
   playSong() {
-    this.gameService.playMusic(this.getCurrentInvader().song);
+    this.gameService.playOrPauseCurrentMusic();
   }
 }

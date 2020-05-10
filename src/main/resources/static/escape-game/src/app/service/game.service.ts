@@ -160,6 +160,15 @@ export class GameService {
     this.currentMusic.play();
   }
 
+
+  playOrPauseCurrentMusic() {
+    if (this.currentMusic.paused) {
+      this.currentMusic.play();
+    } else {
+      this.currentMusic.pause()
+    }
+  }
+
   stopCurrentMusic() {
     if (this.currentMusic) {
       this.currentMusic.pause();

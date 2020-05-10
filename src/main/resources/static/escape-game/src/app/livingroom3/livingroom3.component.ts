@@ -12,11 +12,11 @@ export class Livingroom3Component implements OnInit {
 
   constructor(private gameService : GameService,
               private router : Router) {
-    this.gameService.stopCurrentMusic();
+
   }
 
   ngOnInit(): void {
-    this.gameService.stopCurrentMusic();
+
   }
 
   openTv() {

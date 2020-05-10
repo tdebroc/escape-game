@@ -14,7 +14,7 @@ export class Livingroom4Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gameService.stopCurrentMusic();
+
   }
 
   goToChest() {
