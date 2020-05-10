@@ -30,8 +30,4 @@ export class HomeComponent implements OnInit {
     this.gameService.playMusic("space-invaders-are-back.mp3");
   }
 
-
-  playStartSound() {
-    this.gameService.playSound("mario-kart-race-start-gaming-sound-effect-hd.mp3");
-  }
 }

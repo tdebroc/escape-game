@@ -16,7 +16,9 @@ class Invader {
 @Component({
   selector: 'app-livingroom1',
   templateUrl: './livingroom1.component.html',
-  styleUrls: ['./livingroom1.component.css']
+  styleUrls: ['./livingroom1.component.css',
+    './livingroom1-lightrays.component.css',
+    './livingroom1-curtains.css']
 })
 export class Livingroom1Component implements OnInit {
   rootEl;
@@ -49,6 +51,23 @@ export class Livingroom1Component implements OnInit {
     if (this.isLaserGameOn()) {
       this.prepareLaserGame();
     }
+    this.openCurtain();
+  }
+
+  private openCurtain() {
+    console.log(this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE))
+    if (this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE)) {
+      return;
+    }
+    this.gameService.playSound("mario-kart-race-start-gaming-sound-effect-hd.mp3");
+    setTimeout(() => {
+      $(".rnOuter").addClass("rnInnerOpen");
+      this.gameService.useInNSecond(AppConstants.INTRO_DONE, true, 6000);
+    }, 3500);
+  }
+
+  areCurtainOpened() {
+    return this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE);
   }
 
   openDrawer2() {

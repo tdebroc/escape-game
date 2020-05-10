@@ -34,6 +34,13 @@ export class ItemsComponent implements OnInit {
       y: 0,
     },
     {
+      name: AppConstants.OLD_GOLD_KEY,
+      location: "/livingroom1",
+      rootEl: "#livingroom1-root",
+      x: 0,
+      y: 0,
+    },
+    {
       name: AppConstants.REMOTE,
       location: "/livingroom3",
       rootEl: "#livingroom3-root",
@@ -77,14 +84,6 @@ export class ItemsComponent implements OnInit {
 
   isItemSelected(name) {
     return this.gameService.isItemSelected(name);
-  }
-
-  saveGame() {
-    this.gameService.saveGame();
-  }
-
-  loadGame() {
-    this.gameService.loadGame();
   }
 
   isZoomabledItem(key: string) {

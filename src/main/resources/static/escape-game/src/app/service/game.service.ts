@@ -15,6 +15,7 @@ export class GameService {
   theJukebokMusic = "It's a small World";
 
   constructor() {
+    console.log("Load Game");
     this.loadGame();
     this.launchAutoSave();
   }
@@ -58,6 +59,12 @@ export class GameService {
     this.selectedItemName = undefined;
     this.addToUsedItem(KEY_DRAWER1, this.currentItems[KEY_DRAWER1])
     delete this.currentItems[KEY_DRAWER1];
+  }
+
+  useInNSecond(key: string, value, timeout: number) {
+    setTimeout(() => {
+      this.addToUsedItem(key, value);
+    }, timeout);
   }
 
   addToUsedItem(key, obj) {
@@ -177,4 +184,6 @@ export class GameService {
     this.saveGame()
     setTimeout(this.launchAutoSave.bind(this), 5000);
   }
+
+
 }

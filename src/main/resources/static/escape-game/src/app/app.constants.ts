@@ -11,6 +11,7 @@ export class AppConstants {
   public static SUSHIS = "sushis";
 
   /* States */
+  public static INTRO_DONE = "intro-done";
   public static LOCKER_GOLD_OPENED = "lockerGoldOpened";
   public static COMPUTER_OPENED = "computerOpened";
   public static SPACE_INVADERS_WON = "space-invaders-won";

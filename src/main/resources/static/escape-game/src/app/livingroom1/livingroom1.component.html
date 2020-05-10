@@ -1,17 +1,47 @@
 <div id="livingroom1-root">
   <!-- Decor -->
-  <a [routerLink]="['/livingroom4']"><div class="goToLeft"></div></a>
-  <a [routerLink]="['/livingroom2']"><div class="goToRight"></div></a>
-  <a [routerLink]="['/under-sofa-right']"><div class="under-sofa-right"></div></a>
+  <a [routerLink]="['/livingroom4']">
+    <div class="goToLeft"></div>
+  </a>
+  <a [routerLink]="['/livingroom2']">
+    <div class="goToRight"></div>
+  </a>
+  <a [routerLink]="['/under-sofa-right']">
+    <div class="under-sofa-right"></div>
+  </a>
   <div class="door door-closed"></div>
   <div class="space-invaders" *ngIf="!isLaserGameOn()"></div>
+
+  <!-- Curtains -->
+  <div class="rxWorld" *ngIf="!areCurtainOpened()">
+    <section class="rnOuter ">
+      <section class="aoTable">
+        <div class="aoTableCell">
+
+        </div>
+      </section>
+      <div class='rnInner'>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+        <div class='rnUnit'></div>
+      </div>
+    </section>
+  </div>
+
 
   <!-- Drawer -->
   <div class="key-lock"></div>
   <div class="livingroom1-drawer2 pointer" (click)="openDrawer2()"></div>
 
   <!-- Space Invader Game-->
-  <div id="space-invader-laser"  (click)="shootLaser()"  *ngIf="isLaserSelected()"></div>
+  <div id="space-invader-laser" (click)="shootLaser()" *ngIf="isLaserSelected()"></div>
   <div *ngFor="let bullet of bullets" class="bullet"
        [ngStyle]="{'top.px': bullet.y, 'left.px' : bullet.x + BULLET_OFFSET_LEFT }"></div>
   <div class="painting-white-bg" *ngIf="isLaserGameOn()">
@@ -58,7 +88,7 @@
   <div class="doorKnob pointer" (click)="openDoor()"></div>
   <div class="door door-opened pointer" *ngIf="hasGoldenKeyBeenUsed()"
        [routerLink]="['/doorOpenedGameWon']"></div>
-  <div class="sun2" *ngIf="hasGoldenKeyBeenUsed()" >
+  <div class="sun2" *ngIf="hasGoldenKeyBeenUsed()">
     <div class="ray_box">
       <div class="ray ray1"></div>
       <div class="ray ray2"></div>
