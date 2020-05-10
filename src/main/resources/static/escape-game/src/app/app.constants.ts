@@ -17,6 +17,7 @@ export class AppConstants {
   public static SPACE_INVADERS_WON = "space-invaders-won";
   public static IS_SAFE_OPENED = "is-safe-opened";
   public static PAINTING_DONE = "painting-done";
+  public static LIVING_ROOM1_COUNT_VISIT = "living-room1-count-visit";
 
   /* Trophies */
   public static CARROTS = "carrots";

@@ -51,12 +51,22 @@ export class Livingroom1Component implements OnInit {
     if (this.isLaserGameOn()) {
       this.prepareLaserGame();
     }
+    this.countVisit();
     this.openCurtain();
+  }
+
+  countVisit() {
+    let usedItem = this.gameService.usedItems[AppConstants.LIVING_ROOM1_COUNT_VISIT];
+    if (!usedItem) {
+      this.gameService.addToUsedItem(AppConstants.LIVING_ROOM1_COUNT_VISIT, 0);
+    }
+    this.gameService.usedItems[AppConstants.LIVING_ROOM1_COUNT_VISIT]++;
   }
 
   private openCurtain() {
     console.log(this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE))
-    if (this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE)) {
+    console.log(this.gameService.usedItems[AppConstants.LIVING_ROOM1_COUNT_VISIT]);
+    if (this.areCurtainOpened()) {
       return;
     }
     this.gameService.playSound("mario-kart-race-start-gaming-sound-effect-hd.mp3");
@@ -67,7 +77,8 @@ export class Livingroom1Component implements OnInit {
   }
 
   areCurtainOpened() {
-    return this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE);
+    return this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE)
+      || this.gameService.usedItems[AppConstants.LIVING_ROOM1_COUNT_VISIT] > 1;
   }
 
   openDrawer2() {
