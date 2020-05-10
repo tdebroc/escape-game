@@ -64,8 +64,6 @@ export class Livingroom1Component implements OnInit {
   }
 
   private openCurtain() {
-    console.log(this.gameService.hasItemBeenUsed(AppConstants.INTRO_DONE))
-    console.log(this.gameService.usedItems[AppConstants.LIVING_ROOM1_COUNT_VISIT]);
     if (this.areCurtainOpened()) {
       return;
     }

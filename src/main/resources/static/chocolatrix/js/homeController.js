@@ -6,7 +6,6 @@ app.controller('HomeCtrl', ["$scope", "$timeout",
   $scope.passengerCount = 0;
   $scope.showMissionAcceptedButton = true;
   $scope.acceptMissionButton = function() {
-      console.log("hello");
       $scope.showMissionAcceptedButton = true;
   }
   $scope.changeStep = function(step) {

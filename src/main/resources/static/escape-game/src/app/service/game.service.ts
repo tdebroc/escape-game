@@ -15,7 +15,6 @@ export class GameService {
   theJukebokMusic = "It's a small World";
 
   constructor() {
-    console.log("Load Game");
     this.loadGame();
     this.launchAutoSave();
   }

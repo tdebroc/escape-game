@@ -93,12 +93,10 @@ export class WatchingtvComponent implements AfterViewInit {
   getSpeech() {
     let speech = "";
     let stc = this.gameService.getStc();
-    console.log(stc)
     for (let i = 0; i < stc.length; i++) {
       speech += stc.charCodeAt(i).toString(16);
       speech += " |";
     }
-    console.log(speech)
     return speech;
   }
 

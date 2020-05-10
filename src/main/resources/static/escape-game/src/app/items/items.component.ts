@@ -117,7 +117,6 @@ export class ItemsComponent implements OnInit {
     this.currentItemToHold = itemsToHold;
     this.currentItemToHold.x = e.pageX - rootEl.offset().left - rootEl.width() - 25;
     this.currentItemToHold.y = e.pageY - 80;
-    console.log(this.currentItemToHold)
   }
 
   resetGame() {
