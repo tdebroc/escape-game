@@ -83,11 +83,12 @@
   z-index: 5000;
 }
 .bullet {
-  background-color: black;
-  height: 5px;
-  width: 5px;
+  background-color: white;
+  height: 7px;
+  width: 1px;
   position: absolute;
   z-index: 2000;
+  border: 1px rgb(240,240,240) solid;
 }
 .painting-white-bg {
   position: absolute;

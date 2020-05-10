@@ -139,7 +139,7 @@ export class Livingroom1Component implements OnInit {
         this.bullets.splice(i, 1);
       }
     }
-    setTimeout(this.loopThrewBullets.bind(this), 4);
+    setTimeout(this.loopThrewBullets.bind(this), 2);
   }
 
   private touchingInvader(bullet: Bullet) {

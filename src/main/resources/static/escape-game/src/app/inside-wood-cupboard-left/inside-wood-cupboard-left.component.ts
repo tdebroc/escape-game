@@ -20,7 +20,9 @@ export class InsideWoodCupboardLeftComponent implements OnInit {
     if (cellId == "11") cellId = '0';
     if (cellId == "12") cellId = 'B';
     this.currentPass += cellId;
-    console.log(this.currentPass);
+    if (this.currentPass == this.gameService.getTopSecretCode()) {
+      this.gameService.addToUsedItem(AppConstants.IS_SAFE_OPENED, true);
+    }
   }
 
   openSafe() {
