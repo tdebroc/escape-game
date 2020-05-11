@@ -160,8 +160,14 @@ export class GameService {
     this.currentMusic.play();
   }
 
+  isCurrentMusicPlaying() {
+    return this.currentMusic && this.currentMusic.paused;
+  }
 
   playOrPauseCurrentMusic() {
+    if (!this.currentMusic) {
+      return;
+    }
     if (this.currentMusic.paused) {
       this.currentMusic.play();
     } else {
@@ -192,6 +198,7 @@ export class GameService {
     this.saveGame()
     setTimeout(this.launchAutoSave.bind(this), 5000);
   }
+
 
 
 }

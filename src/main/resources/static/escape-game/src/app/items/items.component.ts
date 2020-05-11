@@ -130,4 +130,12 @@ export class ItemsComponent implements OnInit {
   showClosePage() {
     return this.pageCloseable.indexOf(this.router.url) > -1;
   }
+
+  playOrPauseCurrentMusic() {
+    this.gameService.playOrPauseCurrentMusic()
+  }
+
+  isMusicPlaying() {
+    return this.gameService.isCurrentMusicPlaying();
+  }
 }

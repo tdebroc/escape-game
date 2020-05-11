@@ -12,6 +12,12 @@
     <mat-icon>restore_page</mat-icon>
   </button>
 </div>
+<div class="button" (click)="playOrPauseCurrentMusic()" >
+  <button mat-fab color="primary" aria-label="Play Or Pause Current Music">
+    <mat-icon *ngIf="isMusicPlaying()">music_off</mat-icon>
+    <mat-icon *ngIf="!isMusicPlaying()">audiotrack</mat-icon>
+  </button>
+</div>
 
 <div *ngFor="let item of getItems() | keyvalue">
   <div class="item-container cursor" [class.selectedItem]="isItemSelected(item.key)"
