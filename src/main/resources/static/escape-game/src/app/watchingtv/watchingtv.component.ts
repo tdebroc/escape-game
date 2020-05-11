@@ -23,18 +23,19 @@ export class WatchingtvComponent implements AfterViewInit {
   }
   ngAfterViewInit() : void {
 
-    if (this.channel == 3) {
-      this.initShake();
-      this.animateSubtitles();
-    }
+
   }
   ngAfterViewChecked():  void {
-    this.animateSubtitles();
+    this.recalculateWidth();
   }
 
   switchToChannel(channel: number) {
     this.channel = channel;
     this.widthCalculated = 0;
+    if (this.channel == 3) {
+      this.initShake();
+      this.animateSubtitles();
+    }
   }
 
   switchChannel(add) {
@@ -46,6 +47,7 @@ export class WatchingtvComponent implements AfterViewInit {
 
   initSubtitles() {
     let watchingTv = jQuery("#watching-tv");
+    if (!watchingTv || !watchingTv.offset()) return;
     let hideLeft = $(".hide-left");
     hideLeft.css("left", - watchingTv.offset().left + "px");
     hideLeft.css("width", watchingTv.offset().left + "px");
@@ -54,17 +56,40 @@ export class WatchingtvComponent implements AfterViewInit {
     hideRight.css("right", - rightWidth);
     hideRight.css("width", rightWidth+ "px");
   }
+
   animateSubtitles() {
+    this.subtitleLeft = 0;
+    this.initSubtitles();
+    this.changeSubtitlesPos();
+  }
+
+  recalculateWidth() {
     let subtitleInnerEl = $(".subtitles-inner");
     let width = subtitleInnerEl.width();
     if (width > this.widthCalculated) {
-      this.widthCalculated = width;
       this.initSubtitles();
-      subtitleInnerEl
-        .css({"left":"0px"})
-        .animate({"left": - width}, width * 10, "linear");
+      this.widthCalculated = width;
     }
+  }
 
+  isPlaying = true;
+  timeoutDelay = 7;
+  subtitleLeft = 0;
+
+
+  changeSubtitlesPos() {
+    if (this.isPlaying) {
+      this.subtitleLeft --;
+    }
+    setTimeout(this.changeSubtitlesPos.bind(this), this.timeoutDelay)
+  }
+
+  playPause() {
+    this.isPlaying = !this.isPlaying;
+  }
+
+  rewindSubs() {
+    this.subtitleLeft += 100;
   }
 
   private initShake() {

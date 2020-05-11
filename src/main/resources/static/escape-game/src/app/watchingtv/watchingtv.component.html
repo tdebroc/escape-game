@@ -3,6 +3,19 @@
   <div *ngFor="let channel of [1,2,3]"
         class="channel-button pointer"
         (click)="switchToChannel(channel)">{{channel}}</div>
+  <div *ngIf="channel == 3">
+    <div class="button" (click)="rewindSubs()" >
+      <button mat-fab color="primary" aria-label="Reset all Game"  matTooltip="Reset All Game" matTooltipPosition="below">
+        <mat-icon>fast_rewind</mat-icon>
+      </button>
+    </div>
+    <div class="button" (click)="playPause()" >
+      <button mat-fab color="primary" aria-label="Play/Pause"  matTooltip="Play/Pause" matTooltipPosition="below">
+        <mat-icon *ngIf="isPlaying">pause</mat-icon>
+        <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>
 
 <iframe class="tv-channel pointer" *ngIf="channel == 1"
@@ -15,7 +28,7 @@
 <div id="watching-tv" *ngIf="channel == 3">
   <div class="invader-president"></div>
   <div class="subtitles">
-    <div class="subtitles-inner">
+    <div class="subtitles-inner" [ngStyle]="{'left.px' : subtitleLeft }" >
       <span *ngFor="let el of speech.split('')">
         <span *ngIf="inInvaderLetter(el)">
           <img src="assets/images/invaders/spaceInvaders-{{el.toLowerCase()}}.png"/>
@@ -29,6 +42,3 @@
 </div>
 
 <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>
-<a (click)="switchChannel(-1)"><div class="goToLeft"></div></a>
-<a (click)="switchChannel(+1)"><div class="goToRight"></div></a>
-

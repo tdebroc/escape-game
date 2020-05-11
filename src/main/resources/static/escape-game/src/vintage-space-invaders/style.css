@@ -37,3 +37,19 @@ canvas {
   z-index: 9999;
   width: 100%;
 }
+
+#close-page {
+  position: absolute;
+  left: -70px;
+  background-size: 100% 100%;
+  z-index: 9100;
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  color: grey;
+  padding-top: 10px;
+  top: 10px;
+  padding-left: 20px;
+  font-family: sans-serif;
+  cursor: pointer;
+}

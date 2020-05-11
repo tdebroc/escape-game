@@ -19,16 +19,19 @@
   overflow: hidden;
   vertical-align: middle;
   margin-left: 5px;
+
 }
 
+.button {
+  float : left;
+}
 .switch-channel {
   position: absolute;
-  height: 100%;
   width: 100%;
   z-index: 6000;
 }
 .switch-channel-container {
-  height: 100px;
+  /* height: 100px; */
 }
 
 .goToBottom {
