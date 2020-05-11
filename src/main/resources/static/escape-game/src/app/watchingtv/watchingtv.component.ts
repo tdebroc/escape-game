@@ -74,22 +74,31 @@ export class WatchingtvComponent implements AfterViewInit {
 
   isPlaying = true;
   timeoutDelay = 7;
-  subtitleLeft = 0;
+  subtitleLeft = 150;
+  decrement = 1;
 
 
   changeSubtitlesPos() {
-    if (this.isPlaying) {
-      this.subtitleLeft --;
+    if (this.isPlaying && this.subtitleLeft > - this.widthCalculated - 500) {
+      this.subtitleLeft -= this.decrement;
     }
     setTimeout(this.changeSubtitlesPos.bind(this), this.timeoutDelay)
+  }
+  moreSpeed() {
+    this.decrement++;
   }
 
   playPause() {
     this.isPlaying = !this.isPlaying;
+    this.decrement = 1;
+  }
+
+  backToBeginning() {
+    this.subtitleLeft = 150;
   }
 
   rewindSubs() {
-    this.subtitleLeft += 100;
+    this.subtitleLeft += 200;
   }
 
   private initShake() {

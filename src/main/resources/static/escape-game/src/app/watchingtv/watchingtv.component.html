@@ -4,8 +4,13 @@
         class="channel-button pointer"
         (click)="switchToChannel(channel)">{{channel}}</div>
   <div *ngIf="channel == 3">
+    <div class="button" (click)="backToBeginning()" >
+      <button mat-fab color="primary" aria-label="Back to beginning"  matTooltip="Back to beginning" matTooltipPosition="below">
+        <mat-icon >first_page</mat-icon>
+      </button>
+    </div>
     <div class="button" (click)="rewindSubs()" >
-      <button mat-fab color="primary" aria-label="Reset all Game"  matTooltip="Reset All Game" matTooltipPosition="below">
+      <button mat-fab color="primary" aria-label="Rewind"  matTooltip="Rewind" matTooltipPosition="below">
         <mat-icon>fast_rewind</mat-icon>
       </button>
     </div>
@@ -13,6 +18,11 @@
       <button mat-fab color="primary" aria-label="Play/Pause"  matTooltip="Play/Pause" matTooltipPosition="below">
         <mat-icon *ngIf="isPlaying">pause</mat-icon>
         <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+      </button>
+    </div>
+    <div class="button" (click)="moreSpeed()" >
+      <button mat-fab color="primary" aria-label="Play faster"  matTooltip="Play faster" matTooltipPosition="below">
+        <mat-icon >speed</mat-icon>
       </button>
     </div>
   </div>
