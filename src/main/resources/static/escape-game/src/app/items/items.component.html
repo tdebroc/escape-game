@@ -18,11 +18,6 @@
     <mat-icon *ngIf="!isMusicPlaying()">audiotrack</mat-icon>
   </button>
 </div>
-<div class="button" (click)="resetGame()" >
-  <button mat-fab color="primary" aria-label="Reset all Game"  matTooltip="Reset All Game" matTooltipPosition="before">
-    <mat-icon>restore_page</mat-icon>
-  </button>
-</div>
 
 <div *ngFor="let item of getItems() | keyvalue">
   <div class="item-container cursor" [class.selectedItem]="isItemSelected(item.key)"
