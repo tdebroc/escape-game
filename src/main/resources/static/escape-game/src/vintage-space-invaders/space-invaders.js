@@ -7,6 +7,11 @@ let audio = new Audio();
 audio.src = "assets/sounds/music/player-1-space-invaders-single-1979.mp3";
 audio.load();
 audio.play();
+audio.addEventListener('ended', function() {
+  this.currentTime = 0;
+  this.play();
+}, false);
+
 
 let POINT_TO_BEAT = window.location.hostname === "localhost" ? 50 : 2750;
 (function(){
