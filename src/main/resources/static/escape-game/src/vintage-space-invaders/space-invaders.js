@@ -256,7 +256,7 @@ var Player = SheetSprite.extend({
   init: function() {
     this._super(spriteSheetImg, PLAYER_CLIP_RECT, CANVAS_WIDTH/2, CANVAS_HEIGHT - 70);
     this.scale.set(0.85, 0.85);
-    this.lives = 5;
+    this.lives = 3;
     this.xVel = 0;
     this.bullets = [];
     this.bulletDelayAccumulator = 0;
