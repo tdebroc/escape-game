@@ -10,11 +10,16 @@
         </tr>
       </table>
     </div>
+    <div class="current-code" *ngIf="currentPass != ''">
+      {{currentPass}}
+    </div>
   </div>
   <div class="safe-opened" *ngIf="isSafeOpened()">
     <img src="../../assets/images/trophies/syringe-invader.png" class="pointer"
+         alt="syringe-invader"
          (click)="takeSyringue()" *ngIf="!isSyringueTaken()"/>
     <img src="assets/images/items/space-invader-laser.png" class="pointer"
+         alt="space-invader-laser"
          (click)="takeLaser()" *ngIf="!isLaserTaken()"/>
   </div>
   <a [routerLink]="['/livingroom3']"><div class="goToBottom"></div></a>

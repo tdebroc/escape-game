@@ -46,3 +46,11 @@
   left: 200px;
   position: absolute;
 }
+.current-code {
+  background-color: rgba(200,200,200,0.4);
+  width: fit-content;
+  padding: 3px;
+  margin-top: 294px;
+  margin-left: 149px;
+  transform: rotate(-3deg);
+}

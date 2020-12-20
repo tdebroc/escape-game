@@ -1,8 +1,10 @@
 <div class="switch-channel-container">
-  CHANNEL:<br/>
+  CHANNELS:<br/>
   <div *ngFor="let channel of [1,2,3]"
         class="channel-button pointer"
         (click)="switchToChannel(channel)">{{channel}}</div>
+  <span class="tips-channel1and2" *ngIf="channel < 3">Tip: Channels 1 and 2 are a lot fun ! But not useful for the escape-game ;-)</span>
+  <span class="tips-channel3" *ngIf="channel == 3">Tip: The green invader is speaking a strange language, can you understand it ?</span>
   <div *ngIf="channel == 3">
     <div class="button" (click)="backToBeginning()" >
       <button mat-fab color="primary" aria-label="Back to beginning"  matTooltip="Back to beginning" matTooltipPosition="below">
@@ -41,7 +43,8 @@
     <div class="subtitles-inner" [ngStyle]="{'left.px' : subtitleLeft }" >
       <span *ngFor="let el of speech.split('')">
         <span *ngIf="inInvaderLetter(el)">
-          <img src="assets/images/invaders/spaceInvaders-{{el.toLowerCase()}}.png"/>
+          <img src="assets/images/invaders/spaceInvaders-{{el.toLowerCase()}}.png"
+               alt="{{el.toLowerCase()}}"/>
         </span>
         <span class="letter" *ngIf="!inInvaderLetter(el)">{{el}}</span>
       </span>
