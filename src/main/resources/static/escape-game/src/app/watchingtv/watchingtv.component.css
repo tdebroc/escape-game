@@ -89,3 +89,13 @@
   height: 100%;
   width: 100%;
 }
+
+.tips-channel1and2, .tips-channel3 {
+  width: 180px;
+  display: block;
+  font-style: italic;
+  font-size: 10px;
+}
+.tips-channel3 {
+  width: 224px;
+}

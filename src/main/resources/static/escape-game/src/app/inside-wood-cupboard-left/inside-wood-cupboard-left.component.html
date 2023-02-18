@@ -10,6 +10,9 @@
         </tr>
       </table>
     </div>
+    <div class="current-code" *ngIf="currentPass != ''">
+      {{currentPass}}
+    </div>
   </div>
   <div class="safe-opened" *ngIf="isSafeOpened()">
     <img src="assets/images/trophies/syringe-invader.png" class="pointer"
