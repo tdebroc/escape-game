@@ -1,18 +1,12 @@
+
 /* Simple JavaScript Inheritance
  * By John Resig http://ejohn.org/
  * MIT Licensed.
  */
 // Inspired by base2 and Prototype
-let audio = new Audio();
-audio.src = "assets/sounds/music/player-1-space-invaders-single-1979.mp3";
-audio.load();
-audio.play();
-audio.addEventListener('ended', function() {
-  this.currentTime = 0;
-  this.play();
-}, false);
 
 
+let SONG_LAUNCHED = false;
 let POINT_TO_BEAT = window.location.hostname === "localhost" ? 50 : 2750;
 (function(){
   var initializing = false, fnTest = /xyz/.test(function(){}) ? /\b_super\b/ : /.*/;
@@ -511,6 +505,19 @@ function setImageSmoothing(value) {
 }
 
 function initGame() {
+  console.log("initGame")
+  if (!SONG_LAUNCHED) {
+    let audio = new Audio();
+    audio.src = "/escape-game-space-invaders/assets/sounds/music/player-1-space-invaders-single-1979.mp3";
+    audio.load();
+    audio.play();
+    audio.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    }, false);
+    SONG_LAUNCHED = true;
+  }
+
   dirtyRects = [];
   aliens = [];
   player = new Player();

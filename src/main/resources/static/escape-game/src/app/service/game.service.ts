@@ -20,6 +20,10 @@ export class GameService {
   }
 
   addTrophy(name) {
+    // @ts-ignore
+    gtag('event', 'add_' + name)
+    // @ts-ignore
+    gtag('event', 'trophy_' + (Object.keys(this.trophies).length))
     this.trophies[name] = {
       taken : true,
       onPainting : false

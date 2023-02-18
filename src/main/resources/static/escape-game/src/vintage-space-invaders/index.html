@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,14 +7,24 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link href='vintage-space-invaders/style.css' rel='stylesheet' type='text/css'>
+  <link href='/escape-game-space-invaders/vintage-space-invaders/style.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <a href="/inside-computer-secured">
-    <div id="close-page">x</div>
-  </a>
-  <canvas id="game-canvas" width="640" height="640"></canvas>
-  <div id="hasWon">Congrats ! <a href="/inside-computer-secured"> You can go back IRL here </a></div>
-  <script src="vintage-space-invaders/space-invaders.js"></script>
+<a href="/escape-game-space-invaders/#/inside-computer-secured">
+  <div id="close-page">x</div>
+</a>
+<canvas id="game-canvas" width="640" height="640"></canvas>
+<div id="hasWon">Congrats ! <a href="/escape-game-space-invaders/#/inside-computer-secured"> You can go back IRL here </a></div>
+<script src="file:///Users/thibautdebroca/Documents/dev/escapegame/src/main/resources/static/escape-game/src/vintage-space-invaders/space-invaders.js"></script>
+<script src="/escape-game-space-invaders/vintage-space-invaders/space-invaders.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RR79R36XT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1RR79R36XT');
+</script>
 </body>
 </html>

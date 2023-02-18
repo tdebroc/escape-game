@@ -24,7 +24,7 @@ export class InsideComputerSecuredComponent implements OnInit {
 
   goToSpaceInvaderGame() {
     this.saveCurrentDataBeforeInvaderGame();
-    location.href = "/vintage-space-invaders"
+    location.href = location.pathname + "vintage-space-invaders"
   }
 
   getTopSecretCode() {

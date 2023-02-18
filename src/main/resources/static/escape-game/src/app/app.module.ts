@@ -103,7 +103,7 @@ import { InsideCupboardJapanComponent } from './inside-cupboard-japan/inside-cup
       {path: 'doorOpenedGameWon', component: DoorOpenedGameWonComponent},
       {path: 'japan-expo', component: InsideCupboardJapanComponent},
       {path: '**', component: LandingpageComponent}
-    ]),
+    ], { useHash: true }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule
